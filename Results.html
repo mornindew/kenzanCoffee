@@ -6,10 +6,14 @@
     <link href='https://fonts.googleapis.com/css?family=Lato:400,300' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" type="text/css" href="style.css" />
     <link rel="stylesheet" type="text/css" href="table.css" />
+    <link rel="stylesheet" type="text/css" href="results-table.css" />
+    <link rel="stylesheet" type="text/css" href="tooltip.css" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
     <script type="text/javascript" src="roaster-indiv-button.js"></script>
+    <script type="text/javascript" src="table-char-limit.js"></script>
+    <script type="text/javascript" src="table-tooltip.js"></script>
 </head>
-<body>
+<body class="results">
 <header>
     <h4> Kenzan Media </h4>
     <h1> Cup of Excellence </h1>
@@ -54,11 +58,11 @@
 
     <h2> Individual Results </h2>
 
-    <table >
+    <table class="truncate">
         <tr>
             <td> <div class="individual-name"> Marie </div> </td> <td> Aroma </td> <td> Aroma Score </td> <td> Acidity </td>
             <td> Acidity Score </td> <td> Mouthfeel </td> <td> Mouthfeel Score </td> <td> Flavour </td> <td> Flavour Score </td>
-            <td> Aftertaste</td> <td> Aftertaste Score</td> <td> Balanced </td> <td> Cuppers Score</td> <td> Overall Score </td>
+            <td> Aftertaste</td> <td> Aftertaste Score</td> <td> Balance </td> <td> Cuppers Score</td> <td> Overall Score </td>
         </tr>
         <tr>
             <td class="roasterName"> Sweet Bloom </td>
@@ -152,7 +156,7 @@
             <td> 6 </td>
             <td>  </td>
             <td> 5 </td>
-            <td> cold... </td>
+            <td> cold </td>
             <td> 0 </td>
             <td> 80 </td>
         </tr>
@@ -163,7 +167,7 @@
 
     <h2> Roaster Results </h2>
 
-    <table >
+    <table class="truncate">
         <tr>
             <td> <div class="roasterName"> Middle State </div> </td> <td> Aroma </td> <td> Aroma Score </td> <td> Acidity </td>
             <td> Acidity Score </td> <td> Mouthfeel </td> <td> Mouthfeel Score </td> <td> Flavour </td> <td> Flavour Score </td>

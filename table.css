@@ -13,15 +13,19 @@ table {
     border: 1px solid #999;
     margin: 10px 2% 10px 2%;
     border-collapse: collapse;
+    white-space: nowrap;
 }
 
 table tr:nth-child(1){
     background-color: #477186;
     color: white;
     border: 1px solid #888;
+    white-space: normal;
 }
 
 table tr:nth-child(even){
     background-color: #dddddd;
     border: 1px solid #999;
 }
+
+

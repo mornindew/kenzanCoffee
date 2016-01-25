@@ -13,7 +13,6 @@ body {
 }
 
 header {
-    font-family: "Lato", sans-serif;
     text-align: center;
     width: 100%;
     margin: 0;
@@ -64,7 +63,6 @@ FOOTER
 *************************************************/
 
 footer {
-    font-family: "Lato", sans-serif;
     display: inline-block;
     width: 100%;
     margin-top: 20px;
@@ -90,7 +88,6 @@ SECTION: WHAT
 
 .what {
     text-align: left;
-    font-family: "Lato", sans-serif;
     margin: 0 5%;
 }
 
@@ -100,7 +97,6 @@ SECTION: HOW
 
 .how {
     text-align: left;
-    font-family: "Lato", sans-serif;
     margin: 0 5%;
 }
 
@@ -146,38 +142,22 @@ SECTION: HOW
 /**************************************************************************************
 RESULTS
 ***************************************************************************************/
+.results {
+    text-align: center;
+}
 
 /** Roaster Winner **/
 
-.roaster-winner {
-    font-family: "Lato", sans-serif;
-    text-align: center;
-}
-
 .roaster-winner h2 {
-    margin: 20px 0 0 0;
-}
-
-.roaster-winner table {
-    display: inline-block;
-    border: none;
-    margin: auto;
-}
-
-.roaster-winner table td {
-    padding: 5px 15px;
+    margin: 20px 0 10px 0;
 }
 
 /** Buttons **/
-.button {
-    text-align: center;
-}
-
 button {
     height: 30px;
     width: 150px;
     display: inline-block;
-    margin: 25px auto 5px;
+    margin: 25px auto 10px;
     background-color: #ffb16e;
     border: solid 1px #FF7F00;
 }
@@ -189,16 +169,13 @@ button:focus{
 /** Individual Results **/
 
 .individual-results h2 {
-    text-align: center;
     margin: 5px 0 15px 0;
 }
-
 
 /** Roaster Results **/
 
 .roaster-results h2 {
     margin: 5px 0 15px 0;
-    text-align: center;
 }
 
 /** Toggle between results using class **/
