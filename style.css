@@ -65,11 +65,10 @@ FOOTER
 
 footer {
     font-family: "Lato", sans-serif;
-    position: fixed;
-    bottom: 0;
+    display: inline-block;
     width: 100%;
-    margin-top: 50px;
-    background-color: #cccccc;
+    margin-top: 20px;
+    background-color: #cccccc
 }
 
 footer p {
@@ -169,39 +168,46 @@ RESULTS
     padding: 5px 15px;
 }
 
-/** Individual Results **/
-
-.individual-name {
-    font-size: 1.5em;
-    font-weight: 800;
-}
-
-.individual-results h2 {
-    margin: 30px 0 15px 0;
-}
-
-.individual-results {
-    font-family: "Lato", sans-serif;
+/** Buttons **/
+.button {
     text-align: center;
 }
 
-.individual-results table {
+button {
+    height: 30px;
+    width: 150px;
     display: inline-block;
-    border: 1px solid #999;
-    margin: auto;
-    border-collapse: collapse;
+    margin: 25px auto 5px;
+    background-color: #ffb16e;
+    border: solid 1px #FF7F00;
+}
+
+button:focus{
+    outline: none;
+}
+
+/** Individual Results **/
+
+.individual-results h2 {
+    text-align: center;
+    margin: 5px 0 15px 0;
 }
 
 
-.individual-results table tr:nth-child(1){
-     background-color: #477186;
-     color: white;
-     border: 1px solid #888;
- }
+/** Roaster Results **/
 
-.individual-results table tr:nth-child(even){
-    background-color: #dddddd;
-    border: 1px solid #999;
+.roaster-results h2 {
+    margin: 5px 0 15px 0;
+    text-align: center;
+}
+
+/** Toggle between results using class **/
+
+.inactive {
+    display: none;
+}
+.active {
+    display: inline-block;
 }
 
 /**************************************************************************************
@@ -213,7 +219,7 @@ MAP
     font-size: 0.75em;
 }
 
-.map .coffeeLocation {
+.map .roasterName {
     font-size: 1em;
     font-weight: 900;
 }

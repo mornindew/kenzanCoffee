@@ -5,7 +5,9 @@
     <title>Cup of Excellence</title>
     <link href='https://fonts.googleapis.com/css?family=Lato:400,300' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" type="text/css" href="style.css" />
-    <script type="text/javascript" src="individual_results.js"></script>
+    <link rel="stylesheet" type="text/css" href="table.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+    <script type="text/javascript" src="roaster-indiv-button.js"></script>
 </head>
 <body>
 <header>
@@ -42,116 +44,230 @@
         </tr>
     </table>
 </section>
-<section class="individual-results" >
+
+<div class="button">
+<button id="individualResult"> Individual Results </button>
+<button id="roasterResult"> Roaster Results </button>
+</div>
+
+<section class="individual-results">
 
     <h2> Individual Results </h2>
 
     <table >
         <tr>
-            <td> <div class="individual-name"> Marie </div> </td> <td> Boxcar </td> <td> Corvus </td> <td> Huckleberry </td>
-            <td> ink!</td> <td> Middle State </td> <td> Sweet Bloom </td>
+            <td> <div class="individual-name"> Marie </div> </td> <td> Aroma </td> <td> Aroma Score </td> <td> Acidity </td>
+            <td> Acidity Score </td> <td> Mouthfeel </td> <td> Mouthfeel Score </td> <td> Flavour </td> <td> Flavour Score </td>
+            <td> Aftertaste</td> <td> Aftertaste Score</td> <td> Balanced </td> <td> Cuppers Score</td> <td> Overall Score </td>
         </tr>
         <tr>
-            <td> Aroma Comments </td>
-            <td> roasty </td>
-            <td> sweet </td>
-            <td> bitter</td>
-            <td> acidic </td>
-            <td> roasty </td>
-            <td> sweet </td>
-        </tr>
-        <tr>
-            <td> Acidity (value) </td>
-            <td> 6</td>
-            <td> 4</td>
-            <td> 8 </td>
+            <td class="roasterName"> Sweet Bloom </td>
+            <td> cherry, fruity, light</td>
+            <td> 7 </td>
+            <td> </td>
             <td> 5 </td>
+            <td> thin </td>
+            <td> 5 </td>
+            <td> thin flavour </td>
+            <td> 6 </td>
+            <td>  </td>
+            <td> 7 </td>
+            <td> too thin </td>
+            <td> -1 </td>
+            <td> 79 </td>
+        </tr>
+        <tr>
+            <td class="roasterName"> ink! </td>
+            <td> roasty, bold, chocolate</td>
+            <td> 9 </td>
+            <td> mild </td>
+            <td> 7 </td>
+            <td>  </td>
+            <td> 7 </td>
+            <td> dark, roasty </td>
             <td> 8 </td>
-            <td> 4 </td>
+            <td> nice flavor throughout </td>
+            <td> 8 </td>
+            <td> loved it </td>
+            <td> 3 </td>
+            <td> 92 </td>
         </tr>
         <tr>
-            <td> Acidity (description) </td>
-            <td> citrusy, acidic </td>
-            <td> mild </td>
-            <td> very acidic </td>
-            <td> leading acidity</td>
-            <td> very acidic </td>
-            <td> mild </td>
+            <td class="roasterName"> Middle State </td>
+            <td> citrus, chocolate</td>
+            <td> 6 </td>
+            <td> nice acidity </td>
+            <td> 8 </td>
+            <td> a bit thin </td>
+            <td> 6 </td>
+            <td> overall good </td>
+            <td> 7 </td>
+            <td>  </td>
+            <td> 7 </td>
+            <td> good </td>
+            <td> 1 </td>
+            <td> 85 </td>
         </tr>
         <tr>
-            <td> Mouthfeel (value) </td>
-            <td> 6</td>
-            <td> 5</td>
-            <td> 8</td>
-            <td> 9</td>
-            <td> 8</td>
-            <td> 7</td>
-        </tr>
-        <tr>
-            <td> Mouthfeel (description) </td>
-            <td> strong upfront</td>
-            <td> a bit watery </td>
-            <td> full bodied flavor </td>
-            <td> full flavor, nice aftertaste </td>
-            <td> nice start to finish</td>
-            <td> good mouthfeel </td>
-        </tr>
-        <tr>
-            <td> Flavour (value) </td>
-            <td> 8</td>
-            <td> 9</td>
-            <td> 6</td>
-            <td> 5</td>
-            <td> 4</td>
-            <td> 6</td>
-        </tr>
-        <tr>
-            <td> Flavour (description) </td>
-            <td>great</td>
-            <td>the best</td>
-            <td>good</td>
-            <td>good</td>
-            <td>not the best</td>
-            <td>good</td>
-        </tr>
-        <tr>
-            <td> Aftertaste (value) </td>
-            <td>8</td>
-            <td>7</td>
-            <td>2</td>
-            <td>3</td>
-            <td>7</td>
-            <td>4</td>
-        </tr>
-        <tr>
-            <td> Aftertaste (description) </td>
-            <td>nice, mild aftertaste</td>
-            <td>sweet aftertaste</td>
-            <td>lingering bitter</td>
-            <td>quite bitter</td>
-            <td>nice fruity aftertaste</td>
-            <td>somewhat bitter backend</td>
-        </tr>
-        <tr>
-            <td> Balanced (Overall Notes) </td>
-            <td> very nice coffee </td>
-            <td> nice coffee </td>
-            <td> too bitter for my taste</td>
-            <td> full flavor, a bit bitter </td>
-            <td> citrusy, nice</td>
-            <td> good combination sweet and bitter</td>
-        </tr>
-        <tr>
-            <td> Score </td>
-            <td> 87 </td>
-            <td> 67 </td>
-            <td> 91 </td>
-            <td> 78 </td>
+            <td class="roasterName"> Huckleberry </td>
+            <td> mild, carmel, overripe</td>
+            <td> 6 </td>
+            <td> </td>
+            <td> 6 </td>
+            <td> a bit thin </td>
+            <td> 6 </td>
+            <td> too acidic for my liking </td>
+            <td> 7 </td>
+            <td> lingering bitter </td>
+            <td> 6 </td>
+            <td> bit acidic </td>
+            <td> 0 </td>
             <td> 81 </td>
-            <td> 90 </td>
+        </tr>
+        <tr>
+            <td class="roasterName"> Common Wealth </td>
+            <td> overripe fruit, floral, carmel </td>
+            <td> 9 </td>
+            <td> </td>
+            <td> 7 </td>
+            <td>  </td>
+            <td> 6 </td>
+            <td>  </td>
+            <td> 7 </td>
+            <td> bit bitter </td>
+            <td> 6 </td>
+            <td> bit bitter </td>
+            <td> 0 </td>
+            <td> 85 </td>
+        </tr>
+        <tr>
+            <td class="roasterName"> Boxcar </td>
+            <td> floral, tropical fruit </td>
+            <td> 7 </td>
+            <td> </td>
+            <td> 5 </td>
+            <td>  </td>
+            <td> 7 </td>
+            <td>  </td>
+            <td> 6 </td>
+            <td>  </td>
+            <td> 5 </td>
+            <td> cold... </td>
+            <td> 0 </td>
+            <td> 80 </td>
         </tr>
     </table>
 </section>
+
+<section class="roaster-results">
+
+    <h2> Roaster Results </h2>
+
+    <table >
+        <tr>
+            <td> <div class="roasterName"> Middle State </div> </td> <td> Aroma </td> <td> Aroma Score </td> <td> Acidity </td>
+            <td> Acidity Score </td> <td> Mouthfeel </td> <td> Mouthfeel Score </td> <td> Flavour </td> <td> Flavour Score </td>
+            <td> Aftertaste</td> <td> Aftertaste Score</td> <td> Balanced </td> <td> Cuppers Score</td> <td> Overall Score </td>
+        </tr>
+        <tr>
+            <td class="individualName"> Marie </td>
+            <td> cherry, fruity, light</td>
+            <td> 7 </td>
+            <td> </td>
+            <td> 5 </td>
+            <td> thin </td>
+            <td> 5 </td>
+            <td> thin flavour </td>
+            <td> 6 </td>
+            <td>  </td>
+            <td> 7 </td>
+            <td> too thin </td>
+            <td> -1 </td>
+            <td> 79 </td>
+        </tr>
+        <tr>
+            <td class="individualName"> Craig </td>
+            <td> roasty, bold, chocolate</td>
+            <td> 9 </td>
+            <td> mild </td>
+            <td> 7 </td>
+            <td>  </td>
+            <td> 7 </td>
+            <td> dark, roasty </td>
+            <td> 8 </td>
+            <td> nice flavor throughout </td>
+            <td> 8 </td>
+            <td> loved it </td>
+            <td> 3 </td>
+            <td> 92 </td>
+        </tr>
+        <tr>
+            <td class="individualName"> Justin </td>
+            <td> citrus, chocolate</td>
+            <td> 6 </td>
+            <td> nice acidity </td>
+            <td> 8 </td>
+            <td> a bit thin </td>
+            <td> 6 </td>
+            <td> overall good </td>
+            <td> 7 </td>
+            <td>  </td>
+            <td> 7 </td>
+            <td> good </td>
+            <td> 1 </td>
+            <td> 85 </td>
+        </tr>
+        <tr>
+            <td class="individualName"> Keith </td>
+            <td> mild, carmel, overripe</td>
+            <td> 6 </td>
+            <td> </td>
+            <td> 6 </td>
+            <td> a bit thin </td>
+            <td> 6 </td>
+            <td> too acidic for my liking </td>
+            <td> 7 </td>
+            <td> lingering bitter </td>
+            <td> 6 </td>
+            <td> bit acidic </td>
+            <td> 0 </td>
+            <td> 81 </td>
+        </tr>
+        <tr>
+            <td class="individualName"> Walter </td>
+            <td> overripe fruit, floral, carmel </td>
+            <td> 9 </td>
+            <td> </td>
+            <td> 7 </td>
+            <td>  </td>
+            <td> 6 </td>
+            <td>  </td>
+            <td> 7 </td>
+            <td> bit bitter </td>
+            <td> 6 </td>
+            <td> bit bitter </td>
+            <td> 0 </td>
+            <td> 85 </td>
+        </tr>
+        <tr>
+            <td class="individualName"> Alex </td>
+            <td> floral, tropical fruit </td>
+            <td> 7 </td>
+            <td> </td>
+            <td> 5 </td>
+            <td>  </td>
+            <td> 7 </td>
+            <td>  </td>
+            <td> 6 </td>
+            <td>  </td>
+            <td> 5 </td>
+            <td> cold... </td>
+            <td> 0 </td>
+            <td> 80 </td>
+        </tr>
+    </table>
+</section>
+
 <footer>
     <p> &copy Kenzan Media, LLC</p>
     <img src="Facebook_Logo.png" alt="Facebook Logo" class="socialMedia" />
