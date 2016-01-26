@@ -38,6 +38,39 @@ ABOUT
         height: 25px;
         width: 25px;
     }
+
+/**************************************************
+RESULTS
+**************************************************/
+
+    /* Adjust size of results table to be viewed on mobile phone */
+    .roaster-winner {
+        font-size: 50%;
+    }
+
+    .roaster-winner div {
+        width:300px;
+    }
+
+    /* Move stars back in line with table */
+    #star-right {
+        width:20px;
+        postion: absolute;
+        right: -5px;
+    }
+
+    #star-left {
+        width:20px;
+        postion: absolute;
+        left: -5px;
+    }
+
+    /* Resize buttons to fit on screen */
+    button {
+        font-size: 60%;
+        width: 100px;
+    }
+
 }
 
 /* Tablet styling 450px to 800px */
@@ -61,6 +94,38 @@ ABOUT
 
     .how h3 {
         clear: both;
+    }
+
+/**************************************************
+RESULTS
+**************************************************/
+
+    /* Adjust size of results table to be viewed on mobile phone */
+    .roaster-winner {
+        font-size: 75%;
+    }
+
+    .roaster-winner div {
+        width:400px;
+    }
+
+    /* Move stars back in line with table */
+    #star-right {
+        width:30px;
+        postion: absolute;
+        right: -15px;
+    }
+
+    #star-left {
+        width:30px;
+        postion: absolute;
+        left: -15px;
+    }
+
+    /* Resize buttons to fit on screen */
+    button {
+        font-size: 70%;
+        width: 120px;
     }
 
 }
