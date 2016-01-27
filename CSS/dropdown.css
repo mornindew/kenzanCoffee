@@ -1,0 +1,13 @@
+.dropdown {
+    margin: 10px auto;
+}
+
+.dropdown p {
+    display: inline-block;
+    text-align: center;
+    margin: 0 10px;
+}
+
+.dropdown form {
+    display: inline-block;
+}

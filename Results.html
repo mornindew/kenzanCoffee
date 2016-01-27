@@ -4,11 +4,12 @@
     <meta charset="UTF-8">
     <title>Cup of Excellence</title>
     <link href='https://fonts.googleapis.com/css?family=Lato:400,300' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" type="text/css" href="global/style.css" />
+    <link rel="stylesheet" type="text/css" href="CSS/global/style.css" />
     <link rel="stylesheet" type="text/css" href="CSS/table.css" />
     <link rel="stylesheet" type="text/css" href="CSS/results-table.css" />
     <link rel="stylesheet" type="text/css" href="CSS/tooltip.css" />
-    <link rel="stylesheet" type="text/css" href="global/responsive.css" />
+    <link rel="stylesheet" type="text/css" href="CSS/dropdown.css" />
+    <link rel="stylesheet" type="text/css" href="CSS/global/responsive.css" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
     <script type="text/javascript" src="JS/roaster-indiv-button.js"></script>
     <script type="text/javascript" src="JS/table-char-limit.js"></script>
@@ -59,9 +60,28 @@
 <button id="roasterResult"> Roaster Results </button>
 </div>
 
+
 <section class="individual-results">
 
     <h2> Individual Results </h2>
+
+    <div class="dropdown" >
+        <p> Select Whose Results to See</p>
+        <form>
+            <input list="individuals">
+                <datalist id="individuals">
+                    <option value="Marie">
+                    <option value="Justin">
+                    <option value="Craig M">
+                    <option value="Govinda">
+                    <option value="Keith">
+                    <option value="Walter">
+                    <option value="David">
+                    <option value="Alex">
+                </datalist>
+            </input>
+        </form>
+    </div>
 
     <table class="truncate">
         <tr>
@@ -171,6 +191,22 @@
 <section class="roaster-results">
 
     <h2> Roaster Results </h2>
+
+    <div class="dropdown" >
+        <p> Select Whose Results to See</p>
+        <form>
+            <input list="roasters">
+            <datalist id="roasters">
+                <option value="Boxcar Coffee Roasters">
+                <option value="Common Wealth Coffee">Justin</option>
+                <option value="Huckleberry Roasters">Craig M</option>
+                <option value="ink! Coffee">Govinda</option>
+                <option value="Middle State Coffee">Keith</option>
+                <option value="Sweet Bloom Coffee Roasters">Walter</option>
+            </datalist>
+            </input>
+        </form>
+    </div>
 
     <table class="truncate">
         <tr>

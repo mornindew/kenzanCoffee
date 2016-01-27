@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <title>Cup of Excellence</title>
     <link href='https://fonts.googleapis.com/css?family=Lato:400,300' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" type="text/css" href="global/style.css" />
+    <link rel="stylesheet" type="text/css" href="CSS/global/style.css" />
     <link rel="stylesheet" type="text/css" href="CSS/map.css" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
     <script src="http://maps.googleapis.com/maps/api/js"></script>
@@ -125,6 +125,7 @@
                 boxcarInfo.open(map, boxcar);
             });
 
+
         /** Add Huckleberry Marker **/
             var huckleberry = new google.maps.Marker({
                 position: new google.maps.LatLng(39.775475,-105.006728),
@@ -140,7 +141,7 @@
                     '</div>';
 
             var huckleberryInfo = new google.maps.InfoWindow({
-                content: huckleberryString
+            content: huckleberryString
             });
 
             huckleberry.addListener('click', function() {
