@@ -1,0 +1,13 @@
+/* links together all stylesheets used on the map page */
+
+@import '../global/normalize.css';
+@import '../global/style.css';
+@import '../global/responsive.css';
+@import '../global/header.css';
+@import '../global/navigation.css';
+@import '../global/footer.css';
+@import '../pageStyleSheets/map.css';
+@import '../featureStyleSheets/photo.css';
+
+
+

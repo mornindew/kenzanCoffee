@@ -1,0 +1,32 @@
+/* Styles generic paragraph content */
+/* Currently applied to the content on the home page/about page */
+
+.wrapper {
+    display: inline-block;
+    margin: 0 auto;
+}
+
+/* Styles alignment */
+.content {
+    display: inline-block;
+    text-align: left;
+    margin: 0 auto;
+    padding: 0 5%;
+}
+
+/* Styles main heading */
+.contentHeading {
+    display: inline-block;
+    margin: 0;
+}
+
+/* Styles sub heading */
+.contentSubHeading {
+    text-decoration: underline;
+}
+
+/* Styles embedded links */
+.content a {
+    font-weight: bold;
+    color: black;
+}

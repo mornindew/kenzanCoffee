@@ -4,12 +4,7 @@
     <meta charset="UTF-8">
     <title>Cup of Excellence</title>
     <link href='https://fonts.googleapis.com/css?family=Lato:400,300' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" type="text/css" href="CSS/global/style.css" />
-    <link rel="stylesheet" type="text/css" href="CSS/table.css" />
-    <link rel="stylesheet" type="text/css" href="CSS/results-table.css" />
-    <link rel="stylesheet" type="text/css" href="CSS/tooltip.css" />
-    <link rel="stylesheet" type="text/css" href="CSS/dropdown.css" />
-    <link rel="stylesheet" type="text/css" href="CSS/global/responsive.css" />
+    <link rel="stylesheet" type="text/css" href="CSS/linkedStyleSheets/resultsAll.css" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
     <script type="text/javascript" src="JS/roaster-indiv-button.js"></script>
     <script type="text/javascript" src="JS/table-char-limit.js"></script>
@@ -17,18 +12,18 @@
 </head>
 <body class="results">
 <header>
-    <h4> Kenzan Media </h4>
-    <h1> Cup of Excellence </h1>
+    <h4 class="subHeader"> Kenzan Media </h4>
+    <h1 class="mainHeader"> Cup of Excellence </h1>
     <div class = "nav">
         <ul>
             <li> <a href="index.html"> About </a> </li>
-            <li> <a href="results.html" class="selected"> Results </a> </li>
+            <li> <a href="results.html" class="highlighted"> Results </a> </li>
             <li> <a href="map.html"> Find the Coffee </a></li>
         </ul>
     </div>
 </header>
-<section class="roaster-winner">
-    <h2> And The Winner Is... </h2>
+<section class="bannerTable">
+    <h2 class="contentHeading"> And The Winner Is... </h2>
     <div> <img src="IMG/Star.gif" alt="star" id="star-left"/>
     <table>
         <tr>
@@ -61,9 +56,9 @@
 </div>
 
 
-<section class="individual-results">
+<section class="individual table-results">
 
-    <h2> Individual Results </h2>
+    <h2 class="contentHeading"> Individual Results </h2>
 
     <div class="dropdown" >
         <p> Select Whose Results to See</p>
@@ -85,12 +80,12 @@
 
     <table class="truncate">
         <tr>
-            <td> <div class="individual-name"> Marie </div> </td> <td> Aroma </td> <td> Aroma Score </td> <td> Acidity </td>
+            <td> Marie </td> <td> Aroma </td> <td> Aroma Score </td> <td> Acidity </td>
             <td> Acidity Score </td> <td> Mouthfeel </td> <td> Mouthfeel Score </td> <td> Flavour </td> <td> Flavour Score </td>
             <td> Aftertaste</td> <td> Aftertaste Score</td> <td> Balance </td> <td> Cuppers Score</td> <td> Overall Score </td>
         </tr>
         <tr>
-            <td class="roasterName"> Sweet Bloom </td>
+            <td> Sweet Bloom </td>
             <td> cherry, fruity, light</td>
             <td> 7 </td>
             <td> </td>
@@ -106,7 +101,7 @@
             <td> 79 </td>
         </tr>
         <tr>
-            <td class="roasterName"> ink! </td>
+            <td> ink! </td>
             <td> roasty, bold, chocolate</td>
             <td> 9 </td>
             <td> mild </td>
@@ -122,7 +117,7 @@
             <td> 92 </td>
         </tr>
         <tr>
-            <td class="roasterName"> Middle State </td>
+            <td> Middle State </td>
             <td> citrus, chocolate</td>
             <td> 6 </td>
             <td> nice acidity </td>
@@ -138,7 +133,7 @@
             <td> 85 </td>
         </tr>
         <tr>
-            <td class="roasterName"> Huckleberry </td>
+            <td> Huckleberry </td>
             <td> mild, carmel, overripe</td>
             <td> 6 </td>
             <td> </td>
@@ -154,7 +149,7 @@
             <td> 81 </td>
         </tr>
         <tr>
-            <td class="roasterName"> Common Wealth </td>
+            <td> Common Wealth </td>
             <td> overripe fruit, floral, carmel </td>
             <td> 9 </td>
             <td> </td>
@@ -170,7 +165,7 @@
             <td> 85 </td>
         </tr>
         <tr>
-            <td class="roasterName"> Boxcar </td>
+            <td> Boxcar </td>
             <td> floral, tropical fruit </td>
             <td> 7 </td>
             <td> </td>
@@ -188,9 +183,9 @@
     </table>
 </section>
 
-<section class="roaster-results">
+<section class="roaster table-results">
 
-    <h2> Roaster Results </h2>
+    <h2 class="contentHeading"> Roaster Results </h2>
 
     <div class="dropdown" >
         <p> Select Whose Results to See</p>
@@ -210,12 +205,12 @@
 
     <table class="truncate">
         <tr>
-            <td> <div class="roasterName"> Middle State </div> </td> <td> Aroma </td> <td> Aroma Score </td> <td> Acidity </td>
+            <td> Middle State </td> <td> Aroma </td> <td> Aroma Score </td> <td> Acidity </td>
             <td> Acidity Score </td> <td> Mouthfeel </td> <td> Mouthfeel Score </td> <td> Flavour </td> <td> Flavour Score </td>
             <td> Aftertaste</td> <td> Aftertaste Score</td> <td> Balanced </td> <td> Cuppers Score</td> <td> Overall Score </td>
         </tr>
         <tr>
-            <td class="individualName"> Marie </td>
+            <td> Marie </td>
             <td> cherry, fruity, light</td>
             <td> 7 </td>
             <td> </td>
@@ -231,7 +226,7 @@
             <td> 79 </td>
         </tr>
         <tr>
-            <td class="individualName"> Craig </td>
+            <td> Craig </td>
             <td> roasty, bold, chocolate</td>
             <td> 9 </td>
             <td> mild </td>
@@ -247,7 +242,7 @@
             <td> 92 </td>
         </tr>
         <tr>
-            <td class="individualName"> Justin </td>
+            <td> Justin </td>
             <td> citrus, chocolate</td>
             <td> 6 </td>
             <td> nice acidity </td>
@@ -263,7 +258,7 @@
             <td> 85 </td>
         </tr>
         <tr>
-            <td class="individualName"> Keith </td>
+            <td> Keith </td>
             <td> mild, carmel, overripe</td>
             <td> 6 </td>
             <td> </td>
@@ -279,7 +274,7 @@
             <td> 81 </td>
         </tr>
         <tr>
-            <td class="individualName"> Walter </td>
+            <td> Walter </td>
             <td> overripe fruit, floral, carmel </td>
             <td> 9 </td>
             <td> </td>
@@ -295,7 +290,7 @@
             <td> 85 </td>
         </tr>
         <tr>
-            <td class="individualName"> Alex </td>
+            <td> Alex </td>
             <td> floral, tropical fruit </td>
             <td> 7 </td>
             <td> </td>

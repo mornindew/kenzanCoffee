@@ -2,16 +2,16 @@
  * Created by marieschmidt on 1/25/16.
  */
 $(document).ready(function() {
-    $('.roaster-results').addClass("inactive");
+    $('.roaster').addClass("inactive");
 
     $('#individualResult').click(function() {
-        $('.roaster-results').addClass("inactive");
-        $('.individual-results').removeClass("inactive");
+        $('.roaster').addClass("inactive");
+        $('.individual').removeClass("inactive");
     });
 
     $('#roasterResult').click(function() {
-        $('.individual-results').addClass("inactive");
-        $('.roaster-results').removeClass("inactive");
+        $('.individual').addClass("inactive");
+        $('.roaster').removeClass("inactive");
     });
 
     $('#individualResult').hover(

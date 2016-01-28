@@ -1,0 +1,26 @@
+/**************************************************************************************
+ABOUT - formats specific features of the index HTML page
+***************************************************************************************/
+
+/* styles heading placement */
+.content h2 {
+    padding: 10px 0;
+}
+
+/* styles step list placement */
+.steps {
+    padding: 3px 20px;
+}
+
+/* styles flavors list placement */
+.flavors {
+    margin-left: 40%;
+}
+
+/* styles cupping photo*/
+.cupping {
+    margin: 2% 5% 5% 5%;
+    float: left;
+    width: 25%;
+    height:25%;
+}

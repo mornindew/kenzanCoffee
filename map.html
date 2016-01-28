@@ -4,26 +4,25 @@
     <meta charset="UTF-8">
     <title>Cup of Excellence</title>
     <link href='https://fonts.googleapis.com/css?family=Lato:400,300' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" type="text/css" href="CSS/global/style.css" />
-    <link rel="stylesheet" type="text/css" href="CSS/map.css" />
+    <link rel="stylesheet" type="text/css" href="CSS/linkedStyleSheets/mapAll.css" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
     <script src="http://maps.googleapis.com/maps/api/js"></script>
 </head>
 <body>
 <header>
-    <h4> Kenzan Media </h4>
-    <h1> Cup of Excellence </h1>
+    <h4 class="subHeader"> Kenzan Media </h4>
+    <h1 class="mainHeader"> Cup of Excellence </h1>
     <div class = "nav">
         <ul>
             <li> <a href="index.html"> About </a> </li>
             <li> <a href="results.html"> Results </a> </li>
-            <li> <a href="map.html" class="selected"> Find the Coffee </a> </li>
+            <li> <a href="map.html" class="highlighted"> Find the Coffee </a> </li>
         </ul>
     </div>
 </header>
 <section class="map">
 
-    <div id="map">
+    <div id="map" class="photo">
         <script>
         function initialize() {
         var mapProp = {

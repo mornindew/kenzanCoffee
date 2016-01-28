@@ -1,0 +1,18 @@
+/**************************************************************************************
+MAP - formats specific elements of the map HTML page
+***************************************************************************************/
+
+/* styles alignment */
+.map {
+    text-align: center ;
+}
+
+/* styles map size */
+#map {
+
+    height: 700px;
+    width: 80%;
+    background-color: #ddd;
+    margin: 2%;
+}
+
