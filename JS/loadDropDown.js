@@ -1,9 +1,9 @@
-angular.module("table", [])
+var vm = angular.module("loadDropDown", []);
 
-.controller('loadDropDown', function($scope, $http) {
+vm.controller('dropDown', function($scope, $http) {
 
     //load results from JSON file
-    $http.get('./JS/data.json')
+    $http.get('../data/data.json')
         .success(function (data) { //if load is successful...
             $scope.results = data;
 

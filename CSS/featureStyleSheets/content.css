@@ -1,7 +1,7 @@
 /* Styles generic paragraph content */
 /* Currently applied to the content on the home page/about page */
 
-.wrapper {
+.indexWrapper {
     display: inline-block;
     margin: 0 auto;
 }

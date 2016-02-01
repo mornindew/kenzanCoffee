@@ -1,7 +1,7 @@
 /**
  * Created by marieschmidt on 1/27/16.
  */
-var results = require('./data.json');
+var results = require('./../data/data.json');
 
 /*******************************************************
  FUNCTIONS
