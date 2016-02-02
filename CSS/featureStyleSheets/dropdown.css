@@ -1,0 +1,19 @@
+/* Formats the dropdown lists */
+/* Currently being used on the dropdown lists on the results page */
+
+/* Styles dropdown list descriptor*/
+.dropdown p {
+    display: inline-block;
+    text-align: center;
+    margin: 0 10px;
+}
+
+/* Styles dropdown list display*/
+.dropdown form {
+    display: inline-block;
+}
+
+/* Styles spacing between list descriptor and list*/
+.dropdown {
+    margin: 10px auto;
+}

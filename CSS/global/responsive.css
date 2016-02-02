@@ -1,32 +1,35 @@
-/* iPhone styling 1px to 450px */
-@media screen and (max-width: 450px) {
+/* iPhone styling 1px to 480px */
+@media screen and (max-width: 480px) {
 
 /**************************************************
 ABOUT
 **************************************************/
 
-    /* Adjust Navigation Menu */
+    /* Adjust Navigation Menu to one column */
     .nav li {
         display: block;
-        text-align: left;
+        text-align: center;
     }
 
     /* Adjust Photo Placement */
-    .cupping_photo {
-        display: block;
+    .cupping {
+        display: inline-block;
         margin: 10px auto;
         width: 80%;
     }
 
-    /* Wrap paragraph below photo */
-    .how p {
+    /* Make sure text doesn't wrap photo */
+    .content p {
         clear: both;
     }
 
     /* Adjust placement of flavour list */
-    .coffee-types ul {
+    .flavors {
         padding: 0;
-        margin: 5px auto;
+    }
+
+    .flavors li {
+        margin: 0 auto;
     }
 
     /* Resize footer for smaller browser window */
@@ -44,24 +47,22 @@ RESULTS
 **************************************************/
 
     /* Adjust size of results table to be viewed on mobile phone */
-    .roaster-winner {
-        font-size: 50%;
+    .bannerTable div {
+        width:300px;
     }
 
-    .roaster-winner div {
-        width:300px;
+    .bannerTable {
+        font-size: 50%;
     }
 
     /* Move stars back in line with table */
     #star-right {
         width:20px;
-        postion: absolute;
         right: -5px;
     }
 
     #star-left {
         width:20px;
-        postion: absolute;
         left: -5px;
     }
 
@@ -71,29 +72,52 @@ RESULTS
         width: 100px;
     }
 
-}
+    /* Resize individual/roaster results (can only do heading for now, still working on how to resize the massive table */
 
-/* Tablet styling 450px to 800px */
-@media screen and (min-width: 450px) and (max-width: 600px) {
-
-    /**************************************************
-    ABOUT
-    **************************************************/
-    /* Move title above Photo */
-    .how h2 {
-        display: inline;
+    .results .contentHeading {
+        font-size: 75%;
+        font-weight: bolder;
+        margin: 5px 0 0 0;
     }
 
+    /*resize dropdown menu */
+    .dropdown {
+        margin: 3px
+    }
+
+    .dropdown p {
+        font-size:75%
+    }
+
+}
+
+/* Tablet styling 450px to 660px */
+@media screen and (min-width: 480px) and (max-width: 660px) {
+
+/**************************************************
+ABOUT
+**************************************************/
+
     /* Adjust Photo Placement */
-    .cupping_photo {
+    .cupping {
         display: block;
         margin: 10px 20px 50px 0;
         width: 40%;
 
     }
 
-    .how h3 {
+    /* Keep sub heading below image */
+    .contentSubHeading {
         clear: both;
+    }
+
+    /* Adjust placement of flavour list */
+    .flavors {
+        margin-left: 15%;
+    }
+
+    .flavors li {
+        margin: 0;
     }
 
 /**************************************************
@@ -101,11 +125,11 @@ RESULTS
 **************************************************/
 
     /* Adjust size of results table to be viewed on mobile phone */
-    .roaster-winner {
+    .bannerTable {
         font-size: 75%;
     }
 
-    .roaster-winner div {
+    .bannerTable div {
         width:400px;
     }
 
@@ -128,24 +152,42 @@ RESULTS
         width: 120px;
     }
 
+    /* Resize individual/roaster results (can only do heading for now, still working on how to resize the massive table */
+
+    .results .contentHeading {
+        font-size: 85%;
+        font-weight: bolder;
+        margin: 5px 0 0 0;
+    }
+
+    /*resize dropdown menu */
+    .dropdown p {
+        font-size:85%;
+    }
+
 }
 
-@media screen and (min-width: 600px) and (max-width: 800px) {
+/* adjust photo size for medium sized screens */
+
+@media screen and (min-width: 600px) and (max-width: 900px) {
 
     /**************************************************
     ABOUT
     **************************************************/
-    /* Move title above Photo */
-    .how h2 {
-        display: inline;
-    }
-
     /* Adjust Photo Placement */
-    .cupping_photo {
+    .cupping {
         display: block;
         margin: 10px 20px 50px 0;
         width: 40%;
 
+    }
+
+}
+
+/* reduce amount of space text takes up on large screens */
+@media screen and (min-width: 900px) {
+    .content {
+        padding: 0 10%;
     }
 
 }

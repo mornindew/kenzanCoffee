@@ -1,0 +1,7 @@
+/* Formats lists*/
+/* Currently being used for the "steps" list and the "flavors" list on the homepage */
+
+/* Removes default styling from lists */
+.unstyledList {
+    list-style: none;
+}

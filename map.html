@@ -4,26 +4,25 @@
     <meta charset="UTF-8">
     <title>Cup of Excellence</title>
     <link href='https://fonts.googleapis.com/css?family=Lato:400,300' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" type="text/css" href="style.css" />
-    <link rel="stylesheet" type="text/css" href="map.css" />
+    <link rel="stylesheet" type="text/css" href="CSS/linkedStyleSheets/mapAll.css" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
     <script src="http://maps.googleapis.com/maps/api/js"></script>
 </head>
 <body>
 <header>
-    <h4> Kenzan Media </h4>
-    <h1> Cup of Excellence </h1>
+    <h4 class="subHeader"> Kenzan Media </h4>
+    <h1 class="mainHeader"> Cup of Excellence </h1>
     <div class = "nav">
         <ul>
             <li> <a href="index.html"> About </a> </li>
-            <li> <a href="Results.html"> Results </a> </li>
-            <li> <a href="map.html" class="selected"> Find the Coffee </a> </li>
+            <li> <a href="results.html"> Results </a> </li>
+            <li> <a href="map.html" class="highlighted"> Find the Coffee </a> </li>
         </ul>
     </div>
 </header>
 <section class="map">
 
-    <div id="map">
+    <div id="map" class="photo">
         <script>
         function initialize() {
         var mapProp = {
@@ -91,7 +90,7 @@
                     '<p> 1590 Little Raven St <br>' +
                         'Suite 180 <br>' +
                         'Denver, CO 80202 </p>' +
-                        '<a href=http://inkcoffee.com/">Visit ink! Coffee Online</a>' +
+                        '<a href="http://inkcoffee.com/">Visit ink! Coffee Online</a>' +
                     '</div>';
 
             var inkInfo = new google.maps.InfoWindow({
@@ -125,6 +124,7 @@
                 boxcarInfo.open(map, boxcar);
             });
 
+
         /** Add Huckleberry Marker **/
             var huckleberry = new google.maps.Marker({
                 position: new google.maps.LatLng(39.775475,-105.006728),
@@ -140,7 +140,7 @@
                     '</div>';
 
             var huckleberryInfo = new google.maps.InfoWindow({
-                content: huckleberryString
+            content: huckleberryString
             });
 
             huckleberry.addListener('click', function() {
@@ -176,8 +176,8 @@
 </section>
 <footer>
     <p> &copy Kenzan Media, LLC</p>
-    <img src="Facebook_Logo.png" alt="Facebook Logo" class="socialMedia" />
-    <img src="Pinterest_Logo.png" alt="Pinterest Logo" class="socialMedia" />
+    <img src="IMG/Facebook_Logo.png" alt="Facebook Logo" class="socialMedia" />
+    <img src="IMG/Pinterest_Logo.png" alt="Pinterest Logo" class="socialMedia" />
 </footer>
 </body>
 </html>

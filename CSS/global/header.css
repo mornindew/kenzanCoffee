@@ -1,0 +1,28 @@
+/* Styles the header element for every page */
+
+/* Basic element formatting including size and color*/
+header {
+    text-align: center;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    background-color: #477186;
+    color: white;
+}
+
+/* Formats sub header*/
+.subHeader {
+    margin: 0;
+    padding: 5px 0 0 0;
+    font-size: 1em;
+    font-style: italic;
+}
+
+/* Formats main header*/
+.mainHeader {
+    margin: 0;
+    padding:5px 0 0 0;
+    font-size: 2.5em;
+}
+
+

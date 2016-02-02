@@ -1,0 +1,28 @@
+/* Styles the page navigation*/
+
+/* formats the navigation bar*/
+.nav ul{
+    list-style: none;
+    padding: 10px 0;
+    background-color: #113C51;
+    border-bottom: 3px solid #032536;
+}
+
+/* formats the navigation items*/
+.nav li {
+    display: inline-block;
+    padding: 0 20px;
+    font-weight: bold;
+    color: white;
+}
+
+/* formats the link features*/
+.nav a {
+    text-decoration: none;
+    color: white;
+}
+
+/* formats the list element of the currently displayed page*/
+.nav a.highlighted {
+    color: #FF7F00;
+}

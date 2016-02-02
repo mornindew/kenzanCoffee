@@ -1,0 +1,52 @@
+/* Style the banner table displaying the overall roaster results */
+
+/* Gives the object within the table a size and position */
+.bannerTable div {
+    width: 480px;
+    margin: auto;
+    position: relative;
+}
+
+/* Assign size and location for left star based on full element location*/
+#star-left {
+    width:40px;
+    display: inline-block;
+    position: absolute;
+    left: -35px;
+    top: -5px;
+}
+
+/* Assign size and location for right star based on full element location*/
+#star-right {
+    width:40px;
+    display: inline-block;
+    position: absolute;
+    right: -35px;
+    top: -5px;
+}
+
+/* Move table to center of banner table element*/
+.bannerTable table {
+    text-align: center;
+    display: inline-block;
+    margin: auto;
+    border: none;
+}
+
+/* Format border and color*/
+.bannerTable table tr {
+    background-color: white;
+    border: none;
+    color: black;
+}
+
+/* Format cell spacing*/
+.bannerTable table td {
+    padding: 5px 15px;
+}
+
+/* Format appearance of first row*/
+.bannerTable table tr:first-child {
+    font-size: 1.1em;
+    font-weight: bold;
+}

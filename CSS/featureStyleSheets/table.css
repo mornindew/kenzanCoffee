@@ -1,12 +1,7 @@
-tr td:first-child {
-    font-weight: bolder;
-}
+/*Formats styled tables*/
+/* Currently being used for the individual and roaster results table */
 
-tr:first-child td:first-child {
-    font-size: 1.25em;
-    font-weight: 800;
-}
-
+/* Styles basic table properties*/
 table {
     text-align: center;
     display: inline-block;
@@ -16,6 +11,13 @@ table {
     white-space: nowrap;
 }
 
+/* Styles table name in top left cell*/
+tr:first-child td:first-child {
+    font-size: 1.25em;
+    font-weight: 800;
+}
+
+/* Styles top row*/
 table tr:nth-child(1){
     background-color: #477186;
     color: white;
@@ -23,9 +25,13 @@ table tr:nth-child(1){
     white-space: normal;
 }
 
+/* Styles first column*/
+tr td:first-child {
+    font-weight: bolder;
+}
+
+/* Styles alternating row colors*/
 table tr:nth-child(even){
     background-color: #dddddd;
     border: 1px solid #999;
 }
-
-

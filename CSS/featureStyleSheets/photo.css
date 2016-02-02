@@ -1,0 +1,8 @@
+/* Applies generic styling to photos*/
+/* Currently being used for the cupping photo on the home page and the map */
+
+/* Styles display and rouded edges*/
+.photo {
+    display: inline-block;
+    border-radius: 5px;
+}

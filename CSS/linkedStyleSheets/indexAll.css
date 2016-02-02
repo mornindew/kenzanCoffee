@@ -1,0 +1,14 @@
+/* links together all stylesheets used on the index page */
+
+@import '../global/normalize.css';
+@import '../global/style.css';
+@import '../global/header.css';
+@import '../global/navigation.css';
+@import '../global/footer.css';
+@import '../pageStyleSheets/index.css';
+@import '../featureStyleSheets/content.css';
+@import '../featureStyleSheets/list.css';
+@import '../featureStyleSheets/photo.css';
+
+@import '../global/responsive.css';
+

@@ -1,0 +1,27 @@
+/**************************************************************************************
+ RESULTS - formats specific features of the results HTML page
+ ***************************************************************************************/
+.results {
+    text-align: center;
+}
+
+/** Roaster Winner **/
+
+.bannerTable .contentHeading {
+    margin: 20px 0 10px 0;
+}
+
+/** Table Results by Roaster or Individual**/
+
+.table-results .contentHeading {
+    margin: 15px 0 10px 0;
+}
+
+/** Toggle between results using class **/
+
+.inactive {
+    display: none;
+}
+.active {
+    display: inline-block;
+}
