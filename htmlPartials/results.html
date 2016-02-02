@@ -1,5 +1,5 @@
 <!-- Full results section wrapper -->
-<div class="results" ng-app="loadDropDown">
+<div class="results" ng-app="CupOfExcellenceApp" ng-controller = 'resultsController as results'>
 
     <!-- full banner table wrapper including title -->
     <section class="bannerTable">
@@ -34,12 +34,12 @@
     </section> <!-- closes the full banner table div including title-->
 
     <!-- full wrapper of tabular results table including toggle buttons -->
-    <section ng-controller="dropDown">
+    <section>
 
         <!-- button wrapper -->
         <div class="button">
-            <button ng-click="resultsCategory = 'individual' " id="individualResult"> Individual Results </button>
-            <button ng-click="resultsCategory = 'roaster' " id="roasterResult"> Roaster Results </button>
+            <button ng-click="results.resultsCategory = 'individual' " id="individualResult"> Individual Results </button>
+            <button ng-click="results.resultsCategory = 'roaster' " id="roasterResult"> Roaster Results </button>
         </div> <!-- closes button div -->
 
 
@@ -47,13 +47,13 @@
         <div class = "tabularResults" >
 
             <!-- Wrap individual results table -->
-            <section class="individual table-results">
+            <section class="individual table-results" ng-hide="results.resultsCategory == 'roaster'">
                 <h2 class="contentHeading"> Individual Results </h2>
 
                 <!-- dropdown menu wrapper for individuals -->
-                <div class="dropdown">
+                <div class="dropdown" ng-controller="individualDropDown as indivDD">
                     <p> Select Whose Results to See</p>
-                    <select ng-model="resultsDesired" id="individual" ng-options="individual for individual in individualNames">
+                    <select ng-model="resultsDesired" id="individual" ng-options="individual for individual in indivDD.individualNames">
                     </select>
                 </div> <!-- closes dropdown menu div -->
 
@@ -164,14 +164,14 @@
             </section> <!-- closes individual table section -->
 
             <!-- wraps roaster results table -->
-            <section class="roaster table-results">
+            <section class="roaster table-results" ng-hide="results.resultsCategory == 'individual'">
 
                 <h2 class="contentHeading"> Roaster Results </h2>
 
                 <!-- dropdown menu wrapper for roasters -->
-                <div class="dropdown">
+                <div class="dropdown" ng-controller="roasterDropDown as roasterDD">
                     <p> Select Whose Results to See</p>
-                    <select ng-model="resultsDesired" id="roasters" ng-options="roaster for roaster in roasterNames">
+                    <select ng-model="resultsDesired" id="roasters" ng-options="roaster for roaster in roasterDD.roasterNames">
                     </select>
                 </div> <!-- closes roaster dropdown menu -->
 

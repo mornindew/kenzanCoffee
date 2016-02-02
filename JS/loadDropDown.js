@@ -1,6 +1,10 @@
-var vm = angular.module("loadDropDown", []);
+(function() {
 
-vm.controller('dropDown', function($scope, $http) {
+var app = angular.module("loadDropDown", []);
+
+app.controller('dropDown', function($http) {
+
+
 
     //load results from JSON file
     $http.get('../data/data.json')
@@ -47,3 +51,4 @@ vm.controller('dropDown', function($scope, $http) {
     });
 
 
+})();
