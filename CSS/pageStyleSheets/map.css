@@ -9,7 +9,6 @@ MAP - formats specific elements of the map HTML page
 
 /* styles map size */
 #map {
-
     height: 700px;
     width: 80%;
     background-color: #ddd;

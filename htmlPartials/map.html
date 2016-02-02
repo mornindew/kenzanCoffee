@@ -1,0 +1,158 @@
+<section class="map">
+
+    <div id="map" class="photo">
+
+        <!-- Map -->
+        <script src="https://maps.googleapis.com/maps/api/js?callback=initMap" async defer></script>
+
+        <script>
+
+        function initMap() {
+        var mapProp = {
+        center:new google.maps.LatLng(39.764090,-105.025923),
+        zoom:13,
+        mapTypeId:google.maps.MapTypeId.ROADMAP
+        };
+        var map=new google.maps.Map(document.getElementById("map"),mapProp);
+
+        /** Add Middle State Marker **/
+        var middleState = new google.maps.Marker({
+        position: new google.maps.LatLng(39.750457,-104.999526),
+        map: map,
+        title: 'Little Owl Coffee'
+        });
+
+        var middleStateString = '<div id="content">'+
+        '<p class="roasterName"> Middle State Coffee </p>' +
+        '<p> Little Owl Coffee <br>' +
+            '1555 Black Street <br>' +
+            'Denver, CO 80205 </p>' +
+        '<a href="http://middlestatecoffee.com/"> Visit Middle State Coffee Online</a>' +
+        '</div>';
+
+        var middleStateInfo = new google.maps.InfoWindow({
+        content: middleStateString
+        });
+
+        middleState.addListener('click', function() {
+        middleStateInfo.open(map, middleState);
+        });
+
+        /** Add Common Wealth Marker **/
+        var commonWealth = new google.maps.Marker({
+        position: new google.maps.LatLng(39.761320,-104.981814),
+        map: map,
+        title: 'Crema Coffee House'
+        });
+
+        var commonWealthString = '<div id="content">'+
+        '<p class="roasterName"> Common Wealth Coffee </p>' +
+        '<p> Crema Coffee House <br>' +
+            '2862 Larimer Street <br>' +
+            'Denver, CO 80205 </p>' +
+        '<a href="https://commonwealthcoffee.co/">Visit Common Wealth Coffee Online</a>' +
+        '</div>';
+
+        var commonWealthInfo = new google.maps.InfoWindow({
+        content: commonWealthString
+        });
+
+        commonWealth.addListener('click', function() {
+        commonWealthInfo.open(map, commonWealth);
+        });
+
+        /** Add ink Marker **/
+        var ink = new google.maps.Marker({
+        position: new google.maps.LatLng(39.754757,-105.005094),
+        map: map,
+        title: 'ink! Coffee'
+        });
+
+        var inkString = '<div id="content">'+
+        '<p class="roasterName"> ink! Coffee </p>' +
+        '<p> 1590 Little Raven St <br>' +
+            'Suite 180 <br>' +
+            'Denver, CO 80202 </p>' +
+        '<a href="http://inkcoffee.com/">Visit ink! Coffee Online</a>' +
+        '</div>';
+
+        var inkInfo = new google.maps.InfoWindow({
+        content: inkString
+        });
+
+        ink.addListener('click', function() {
+        inkInfo.open(map, ink);
+        });
+
+        /** Add Boxcar Marker **/
+        var boxcar = new google.maps.Marker({
+        position: new google.maps.LatLng(39.768567,-104.979582),
+        map: map,
+        title: 'Boxcar Coffee Roasters'
+        });
+
+        var boxcarString = '<div id="content">'+
+        '<p class="roasterName"> Boxcar Coffee Roasters</p>' +
+        '<p> 3350 Brighton Blvd. <br>' +
+            'Suite 110 <br>' +
+            'Denver, CO 80216 </p>' +
+        '<a href="http://www.boxcarcoffeeroasters.com/">Visit Boxcar Coffee Online</a>' +
+        '</div>';
+
+        var boxcarInfo = new google.maps.InfoWindow({
+        content: boxcarString
+        });
+
+        boxcar.addListener('click', function() {
+        boxcarInfo.open(map, boxcar);
+        });
+
+
+        /** Add Huckleberry Marker **/
+        var huckleberry = new google.maps.Marker({
+        position: new google.maps.LatLng(39.775475,-105.006728),
+        map: map,
+        title: 'Huckleberry Roasters'
+        });
+
+        var huckleberryString = '<div id="content">'+
+        '<p class="roasterName"> Huckleberry Roasters</p>' +
+        '<p> 4301 Pecos Street <br>' +
+            'Denver, CO 80211 </p>' +
+        '<a href="http://huckleberryroasters.com/">Visit Huckleberry Roasters Online</a>' +
+        '</div>';
+
+        var huckleberryInfo = new google.maps.InfoWindow({
+        content: huckleberryString
+        });
+
+        huckleberry.addListener('click', function() {
+        huckleberryInfo.open(map, huckleberry);
+        });
+
+        /** Add Sweet Bloom Marker **/
+        var sweetBloom = new google.maps.Marker({
+        position: new google.maps.LatLng(39.742339,-105.074790),
+        map: map,
+        title: 'Sweet Bloom Coffee Roasters'
+        });
+
+        var sweetBloomString = '<div id="content">'+
+        '<p class="roasterName"> Sweet Bloom Coffee Roasters </p>' +
+        '<p> 1619 N Reed St <br>' +
+            'Lakewood, CO 80214 </p>' +
+        '<a href="http://sweetbloomcoffee.com/">Visit Sweet Bloom Coffee Roasters Online</a>' +
+        '</div>';
+
+        var sweetBloomInfo = new google.maps.InfoWindow({
+        content: sweetBloomString
+        });
+
+        sweetBloom.addListener('click', function() {
+        sweetBloomInfo.open(map, sweetBloom);
+        });
+        }
+        </script>
+
+    </div>
+</section>

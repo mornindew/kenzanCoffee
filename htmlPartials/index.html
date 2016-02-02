@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Cup of Excellence</title>
+    <!-- Style Sheets and Fonts -->
+    <link rel="stylesheet" type="text/css" href="../CSS/linkedStyleSheets/all.css" />
+    <link href='https://fonts.googleapis.com/css?family=Lato:400,300' rel='stylesheet' type='text/css'>
+</head>
+
+<body ng-app="CupOfExcellenceApp">
+<header>
+    <h4 class="subHeader"> Kenzan Media </h4>
+    <h1 class="mainHeader"> Cup of Excellence </h1>
+    <div class = "nav">
+        <ul>
+            <li> <a href="#/"> Home </a> </li>
+            <li> <a href="#results"> Results </a> </li>
+            <li> <a href="#map"> Find the Coffee </a></li>
+        </ul>
+    </div>
+</header>
+
+<section>
+
+    <div class="elementWrapper">
+
+        <div ng-view></div>
+
+    </div>
+</section>
+
+<footer>
+    <p> &copy Kenzan Media, LLC</p>
+    <img src="../IMG/Facebook_Logo.png" alt="Facebook Logo" class="socialMedia" />
+    <img src="../IMG/Pinterest_Logo.png" alt="Pinterest Logo" class="socialMedia" />
+</footer>
+
+<!-- SCRIPT FILES -->
+<!-- jQuery -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+<script type="text/javascript" src="../JS/roaster-indiv-button.js"></script>
+<script type="text/javascript" src="../JS/table-char-limit.js"></script>
+<script type="text/javascript" src="../JS/table-tooltip.js"></script>
+<!-- Angular -->
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular-route.js"></script>
+<!-- Single Page Router -->
+<script type="text/javascript" src="../JS/CupOfExcellenceApp.js"></script>
+<!-- Angular Elements -->
+<script type="text/javascript" src="../JS/loadDropDown.js" ></script> <!-- doesn't work right now... -->
+
+</body>
+</html>
