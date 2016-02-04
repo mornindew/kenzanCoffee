@@ -1,5 +1,5 @@
 (function () {
-    var app = angular.module('TableResultsHeader', ['dropDownDataService']);
+    var app = angular.module('TableResultsHeader', ['dropDownDataService', 'capitalizeFilter']);
 
     app.controller('TableResultsHeaderCtrl',['dropDownData', function (dropDownData) {
 
