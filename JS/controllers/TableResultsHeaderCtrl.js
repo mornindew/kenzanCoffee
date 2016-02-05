@@ -5,18 +5,6 @@
 
         var vm = this;
 
-        vm.resultsCategory = 'individual';
-        vm.resultsDesired = null;
-        var promise = dropDownData.getData(vm.resultsCategory);
-        promise.then(
-            function (callback) {
-                vm.dropDownArray = callback.data;
-            }, function (error) {
-                console.log(error)
-            });
-
-        vm.tableHeading = vm.resultsCategory + ' Results';
-
         //set category, null out results desired, and generate dropdown menu
         vm.setResultsCategory = function (value) {
             vm.resultsCategory = value;
@@ -31,5 +19,9 @@
             vm.tableHeading = value + ' Results';
         };
 
+        vm.setResultsCategory('individual');
+
+        vm.tableHeading = vm.resultsCategory + ' Results';
+        
     }]);
 })();
