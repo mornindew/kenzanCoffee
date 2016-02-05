@@ -10,7 +10,7 @@
         <div> <img src="../IMG/Star.gif" alt="star" id="star-left"/>
             <table>
                 <tr ng-repeat="(key,value) in getScores.roasterScores | orderBy: '-score'">
-                    <td> {{getScores.rank[$index]}} </td> <td> {{value.name}} </td> <td> Overall Score: {{value.score}} </td>
+                    <td> {{getScores.rank[$index] | ordinalSuffix}} </td> <td> {{value.name}} </td> <td> Overall Score: {{value.score}} </td>
                 </tr>
             </table> <!-- closes banner table -->
             <img src="../IMG/Star.gif" alt="star" id="star-right"/>

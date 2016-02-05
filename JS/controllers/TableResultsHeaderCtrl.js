@@ -22,6 +22,6 @@
         vm.setResultsCategory('individual');
 
         vm.tableHeading = vm.resultsCategory + ' Results';
-        
+
     }]);
 })();
