@@ -2,30 +2,15 @@
 <div class="results" ng-app="CupOfExcellenceApp">
 
     <!-- full banner table wrapper including title -->
-    <section class="bannerTable">
+    <section class="bannerTable" ng-controller="GetScoresTestCtrl as getScores">
 
         <h2 class="contentHeading"> And The Winner Is... </h2>
 
         <!-- banner table and star wrapper -->
         <div> <img src="../IMG/Star.gif" alt="star" id="star-left"/>
             <table>
-                <tr>
-                    <td> 1st </td> <td> Common Wealth Coffee </td> <td> Overall Score: 84.4 </td>
-                </tr>
-                <tr>
-                    <td> 2nd </td> <td> Huckleberry Roasters </td> <td> Overall Score: 84.2 </td>
-                </tr>
-                <tr>
-                    <td> 3rd </td> <td> Boxcar Coffee Roasters </td> <td> Overall Score: 83.6 </td>
-                </tr>
-                <tr>
-                    <td> 4th </td> <td> Sweet Bloom Coffee Roasters </td> <td> Overall Score: 83.4 </td>
-                </tr>
-                <tr>
-                    <td> 5th </td> <td> ink! Coffee </td> <td> Overall Score: 83.2 </td>
-                </tr>
-                <tr>
-                    <td> 6th </td> <td> Middle State Coffee </td> <td> Overall Score: 81.0 </td>
+                <tr ng-repeat="(key,value) in getScores.roasterScores | orderBy: '-score'">
+                    <td> {{getScores.rank[$index]}} </td> <td> {{value.name}} </td> <td> Overall Score: {{value.score}} </td>
                 </tr>
             </table> <!-- closes banner table -->
             <img src="../IMG/Star.gif" alt="star" id="star-right"/>
@@ -59,7 +44,7 @@
                 </div> <!-- closes dropdown menu div -->
 
                 <!-- hard coded individual results table -->
-                <table class="truncate">
+                <table class="truncate" ng-controller="GetScoresTestCtrl as getScores">
                     <tr>
                         <td> Marie </td> <td> Aroma </td> <td> Aroma Score </td> <td> Acidity </td>
                         <td> Acidity Score </td> <td> Mouthfeel </td> <td> Mouthfeel Score </td> <td> Flavour </td> <td> Flavour Score </td>
@@ -162,6 +147,7 @@
                         <td> 80 </td>
                     </tr>
                 </table> <!-- closes individual table -->
+                {{getScores.scores}}
             </section> <!-- closes individual table section -->
 
         </div> <!-- closes tabular results not including buttons -->

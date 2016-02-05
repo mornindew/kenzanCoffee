@@ -1,30 +1,30 @@
-//this service will be used to generate each roasters average score for the banner table
-
 (function() {
-    //var app = angular.module('calculateScoreService',[]);
-    //
-    //app.service('calculateScore', ['$http', function ($http) {
-    //var vm = this;
+    var app = angular.module('calculateRoasterScoreService',['calculateIndivScoreService']);
 
-    var results = require('./../../data/data.json');
-    var roasters = require('./../../data/roasterNames.json');
+    app.service('calculateRoasterScore', ['$http','calculateIndivScore', function ($http, calculateIndivScore) {
+        var vm = this;
 
-    var scores = {};
-    var averages = [];
+        vm.getData = function() {
+        vm.results = $http.get('./../../data/roasterNames.json')
+            .success(function() {
+                return vm.indivScores = individualScores(results);
+            })
+            .error(
+                console.log('error with loading data.json')
+            );
+        };
 
-    for (var i = 0 ; i < roasters.length; i ++) {
-        var roaster = roasters[i];
-        scores[roaster] = getScores(roaster, results);
+        //vm.roasters = $http.get();
+        //
+        //vm.scores = {};
+        //vm.averages = [];
+        //
+        //for (var i = 0 ; i < vm.roasters.length; i ++) {
+        //    vm.roaster = vm.roasters[i];
+        //    vm.scores[vm.roaster] = roasterScores(vm.roaster, vm.indivScores);
+        //    vm.averages[i] = average(vm.scores[vm.roaster]);
+        //}
 
-        averages[i] = average(scores[roaster]);
-
-    }
-
-    //}]);
-
-    /*******************************************************
-     FUNCTIONS
-     ******************************************************/
 
     /* Define function to check if entry is a number */
     function checkNumber(x) {
@@ -50,7 +50,7 @@
     }
 
     /* pull scores of desired roaster */
-    function getScores(value, data) {
+    function roasterScores(value, data) {
         var myData = data;
 
         //iterate through roasters in json file//
@@ -67,12 +67,10 @@
                     //loop through individuals objects
                     for (var i = 0; i < myArray.length; i ++) {
                         //make sure individuals objects contain expected data - slick!
-                        if (validateData(myArray[i])) {
-                            //make sure that property contains a number, if not do not push to output array (would mess up average function otherwise)
-                            if (checkNumber(JSON.parse(myArray[i].score))) {
-                                //populate output array with results!
-                                output.push(JSON.parse(myArray[i].score));
-                            }
+                        //make sure that property contains a number, if not do not push to output array (would mess up average function otherwise)
+                        if (checkNumber(JSON.parse(myArray[i].score))) {
+                            //populate output array with results!
+                            output.push(JSON.parse(myArray[i].score));
                         }
                     }
                 }
@@ -94,9 +92,7 @@
         }
 
         //define expected keys as array//
-        var expectedKeys = ["firstName","lastName","aromaCom","aroma","acidityCom","acidity",
-                            "mouthFeelCom","mouthFeel", "flavourCom","flavour","aftertasteCom",
-                            "aftertaste","balance","cupperScore","score"];
+        var expectedKeys = require('./../../data/expectedKeys.json')
 
         //define array prototype that can be used to check if two arrays equal each other by comparing value by value//
         Array.prototype.equals = function(arr) {
@@ -120,11 +116,7 @@
             return true
 
         };
-
-        //return whether keys are equal or not//
-        return (expectedKeys.equals(keys))
-
     }
 
+    }]);
 })();
-

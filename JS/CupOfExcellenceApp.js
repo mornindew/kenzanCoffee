@@ -1,5 +1,7 @@
 (function () {
-    var cupOfExcellenceApp = angular.module('cupOfExcellenceApp', ['TableResultsHeader','dropDownDataService', 'capitalizeFilter' ,'ngRoute']);
+    var cupOfExcellenceApp = angular.module('cupOfExcellenceApp', ['ngRoute',
+        'TableResultsHeader','dropDownDataService', 'capitalizeFilter',
+        'GetScoresTestCtrl','calcScoreService']);
 
     //Handles viewing of pages for single page app//
     cupOfExcellenceApp.config(function ($routeProvider) {
