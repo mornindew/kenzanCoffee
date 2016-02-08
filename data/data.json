@@ -1,7 +1,8 @@
-{
-  "Sweet Bloom Coffee Roasters": [{
+[
+  {
     "firstName": "Marie",
     "lastName": "Schmidt",
+    "roaster": "Sweet Bloom Coffee Roasters",
     "aromaCom": "cherry,fruity,light",
     "aroma": 7,
     "acidityCom": null,
@@ -20,6 +21,7 @@
     {
       "firstName": "Alex",
       "lastName": "Uribe",
+      "roaster": "Sweet Bloom Coffee Roasters",
       "aromaCom": "fruit/nut",
       "aroma": 7,
       "acidityCom": "too acidic/offensive",
@@ -38,6 +40,7 @@
     {
       "firstName": "David",
       "lastName": "Zuluaga",
+      "roaster": "Sweet Bloom Coffee Roasters",
       "aromaCom": "milk chocolate",
       "aroma": null,
       "acidityCom": null,
@@ -56,6 +59,7 @@
     {
       "firstName": "Craig",
       "lastName": "Martin",
+      "roaster": "Sweet Bloom Coffee Roasters",
       "aromaCom": "carmel, chocolate",
       "aroma": 6,
       "acidityCom": null,
@@ -74,6 +78,7 @@
     {
       "firstName": "Doug",
       "lastName": "Melvin",
+      "roaster": "Sweet Bloom Coffee Roasters",
       "aromaCom": "nutty/cereal",
       "aroma": 8,
       "acidityCom": "low",
@@ -92,6 +97,7 @@
     {
       "firstName": "Keith",
       "lastName": "Nygaard",
+      "roaster": "Sweet Bloom Coffee Roasters",
       "aromaCom": "nutty, almond, roasty, carbon",
       "aroma": 5,
       "acidityCom": null,
@@ -110,6 +116,7 @@
     {
       "firstName": "Walter",
       "lastName": "Schlosser",
+      "roaster": "Sweet Bloom Coffee Roasters",
       "aromaCom": "savory, leathery",
       "aroma": 7,
       "acidityCom": null,
@@ -128,6 +135,7 @@
     {
       "firstName": "Justin",
       "lastName": "Tomlinson",
+      "roaster": "Sweet Bloom Coffee Roasters",
       "aromaCom": "deep balance, toast",
       "aroma": 8,
       "acidityCom": "medium",
@@ -146,6 +154,7 @@
     {
       "firstName": "Larry",
       "lastName": "Samuels",
+      "roaster": "Sweet Bloom Coffee Roasters",
       "aromaCom": "light, not overpowering, unspecific",
       "aroma": null,
       "acidityCom": "low",
@@ -164,6 +173,7 @@
     {
       "firstName": "Govinda",
       "lastName": "Tamburino",
+      "roaster": "Sweet Bloom Coffee Roasters",
       "aromaCom": "dirt, burnt, carmel",
       "aroma": null,
       "acidityCom": null,
@@ -177,13 +187,12 @@
       "balance": null,
       "cupperScore": 4,
       "score": 85
-    }
-  ],
+    },
 
-  "ink! Coffee": [{
+  {
     "firstName": "Marie",
     "lastName": "Schmidt",
-    "aromaCom": "roasty, bold, chocolatey, sweet",
+    "roaster": "ink! Coffee",
     "aroma": 9,
     "acidityCom": "mild",
     "acidity": 7,
@@ -201,6 +210,7 @@
     {
       "firstName": "Alex",
       "lastName": "Uribe",
+      "roaster": "ink! Coffee",
       "aromaCom": "nothing stand out - good",
       "aroma": 8,
       "acidityCom": "too much",
@@ -219,6 +229,7 @@
     {
       "firstName": "David",
       "lastName": "Zuluaga",
+      "roaster": "ink! Coffee",
       "aromaCom": "nut grain",
       "aroma": null,
       "acidityCom": null,
@@ -237,6 +248,7 @@
     {
       "firstName": "Craig",
       "lastName": "Martin",
+      "roaster": "ink! Coffee",
       "aromaCom": "dried wood, mild",
       "aroma": 5,
       "acidityCom": null,
@@ -255,6 +267,7 @@
     {
       "firstName": "Doug",
       "lastName": "Melvin",
+      "roaster": "ink! Coffee",
       "aromaCom": "burnt/toast",
       "aroma": 6,
       "acidityCom": "non-existent",
@@ -273,6 +286,7 @@
     {
       "firstName": "Keith",
       "lastName": "Nygaard",
+      "roaster": "ink! Coffee",
       "aromaCom": "earthy, soil, roasty, carbon",
       "aroma": 4,
       "acidityCom": null,
@@ -291,6 +305,7 @@
     {
       "firstName": "Walter",
       "lastName": "Schlosser",
+      "roaster": "ink! Coffee",
       "aromaCom": "chocolate, dark chocolate",
       "aroma": 6,
       "acidityCom": null,
@@ -309,6 +324,7 @@
     {
       "firstName": "Justin",
       "lastName": "Tomlinson",
+      "roaster": "ink! Coffee",
       "aromaCom": "smoky, grassy, weak",
       "aroma": 6,
       "acidityCom": "mild",
@@ -327,6 +343,7 @@
     {
       "firstName": "Larry",
       "lastName": "Samuels",
+      "roaster": "ink! Coffee",
       "aromaCom": "stronger",
       "aroma": null,
       "acidityCom": "low",
@@ -345,6 +362,7 @@
     {
       "firstName": "Govinda",
       "lastName": "Tamburino",
+      "roaster": "ink! Coffee",
       "aromaCom": "rotten, cacoa nibs",
       "aroma": null,
       "acidityCom": null,
@@ -358,12 +376,12 @@
       "balance": null,
       "cupperScore": 0,
       "score": 69
-    }
-  ],
+    },
 
-  "Middle State Coffee": [{
+  {
     "firstName": "Marie",
     "lastName": "Schmidt",
+    "roaster": "Middle State Coffee",
     "aromaCom": "chocolate, citrus",
     "aroma": 6,
     "acidityCom": "nice acidity",
@@ -382,6 +400,7 @@
     {
       "firstName": "Alex",
       "lastName": "Uribe",
+      "roaster": "Middle State Coffee",
       "aromaCom": "chocolatey",
       "aroma": 7,
       "acidityCom": null,
@@ -400,6 +419,7 @@
     {
       "firstName": "David",
       "lastName": "Zuluaga",
+      "roaster": "Middle State Coffee",
       "aromaCom": "nope",
       "aroma": null,
       "acidityCom": null,
@@ -418,6 +438,7 @@
     {
       "firstName": "Craig",
       "lastName": "Martin",
+      "roaster": "Middle State Coffee",
       "aromaCom": "nutty, earthy",
       "aroma": 7,
       "acidityCom": null,
@@ -436,6 +457,7 @@
     {
       "firstName": "Doug",
       "lastName": "Melvin",
+      "roaster": "Middle State Coffee",
       "aromaCom": "fresh bread",
       "aroma": 8,
       "acidityCom": "low-mild",
@@ -454,6 +476,7 @@
     {
       "firstName": "Keith",
       "lastName": "Nygaard",
+      "roaster": "Middle State Coffee",
       "aromaCom": "earthy, soil, roasty, carbon",
       "aroma": 4,
       "acidityCom": null,
@@ -472,6 +495,7 @@
     {
       "firstName": "Walter",
       "lastName": "Schlosser",
+      "roaster": "Middle State Coffee",
       "aromaCom": "very mild, dry",
       "aroma": 6,
       "acidityCom": "a little sour",
@@ -490,6 +514,7 @@
     {
       "firstName": "Justin",
       "lastName": "Tomlinson",
+      "roaster": "Middle State Coffee",
       "aromaCom": "mild, weak",
       "aroma": 5,
       "acidityCom": "a bit sharp",
@@ -508,6 +533,7 @@
     {
       "firstName": "Larry",
       "lastName": "Samuels",
+      "roaster": "Middle State Coffee",
       "aromaCom": "light sun and little sweet",
       "aroma": null,
       "acidityCom": "none",
@@ -526,6 +552,7 @@
     {
       "firstName": "Govinda",
       "lastName": "Tamburino",
+      "roaster": "Middle State Coffee",
       "aromaCom": "vegetal, bandage/mold",
       "aroma": null,
       "acidityCom": null,
@@ -539,12 +566,12 @@
       "balance": null,
       "cupperScore": 1,
       "score": 74
-    }
-  ],
+    },
 
-  "Huckleberry Roasters": [{
+  {
     "firstName": "Marie",
     "lastName": "Schmidt",
+    "roaster": "Huckleberry Roasters",
     "aromaCom": "mild, carmel, overripe fruit",
     "aroma": 6,
     "acidityCom": null,
@@ -563,6 +590,7 @@
     {
       "firstName": "Alex",
       "lastName": "Uribe",
+      "roaster": "Huckleberry Roasters",
       "aromaCom": null,
       "aroma": 8,
       "acidityCom": null,
@@ -581,6 +609,7 @@
     {
       "firstName": "David",
       "lastName": "Zuluaga",
+      "roaster": "Huckleberry Roasters",
       "aromaCom": "stone fruit, berry",
       "aroma": null,
       "acidityCom": null,
@@ -599,6 +628,7 @@
     {
       "firstName": "Craig",
       "lastName": "Martin",
+      "roaster": "Huckleberry Roasters",
       "aromaCom": "nutty, peanut, hazelnut",
       "aroma": 6,
       "acidityCom": null,
@@ -617,6 +647,7 @@
     {
       "firstName": "Doug",
       "lastName": "Melvin",
+      "roaster": "Huckleberry Roasters",
       "aromaCom": "nutty/bread",
       "aroma": 6,
       "acidityCom": "mid-high",
@@ -635,6 +666,7 @@
     {
       "firstName": "Keith",
       "lastName": "Nygaard",
+      "roaster": "Huckleberry Roasters",
       "aromaCom": "earthy, soil, roasty, carbon",
       "aroma": 4,
       "acidityCom": null,
@@ -653,6 +685,7 @@
     {
       "firstName": "Walter",
       "lastName": "Schlosser",
+      "roaster": "Huckleberry Roasters",
       "aromaCom": "floral, burnt",
       "aroma": 6,
       "acidityCom": null,
@@ -671,6 +704,7 @@
     {
       "firstName": "Justin",
       "lastName": "Tomlinson",
+      "roaster": "Huckleberry Roasters",
       "aromaCom": "top end, floral",
       "aroma": 6,
       "acidityCom": "mild",
@@ -689,6 +723,7 @@
     {
       "firstName": "Larry",
       "lastName": "Samuels",
+      "roaster": "Huckleberry Roasters",
       "aromaCom": "light",
       "aroma": null,
       "acidityCom": "low",
@@ -707,6 +742,7 @@
     {
       "firstName": "Govinda",
       "lastName": "Tamburino",
+      "roaster": "Huckleberry Roasters",
       "aromaCom": "spicy",
       "aroma": null,
       "acidityCom": null,
@@ -720,12 +756,12 @@
       "balance": null,
       "cupperScore": -1,
       "score": 66
-    }
-  ],
+    },
 
-  "Common Wealth Coffee": [{
+  {
     "firstName": "Marie",
     "lastName": "Schmidt",
+    "roaster": "Common Wealth Coffee",
     "aromaCom": "overripe fruit, floral, caramel",
     "aroma": 9,
     "acidityCom": null,
@@ -744,6 +780,7 @@
     {
       "firstName": "Alex",
       "lastName": "Uribe",
+      "roaster": "Common Wealth Coffee",
       "aromaCom": "good",
       "aroma": 7,
       "acidityCom": null,
@@ -762,6 +799,7 @@
     {
       "firstName": "David",
       "lastName": "Zuluaga",
+      "roaster": "Common Wealth Coffee",
       "aromaCom": "floral, citrus",
       "aroma": null,
       "acidityCom": null,
@@ -780,6 +818,7 @@
     {
       "firstName": "Craig",
       "lastName": "Martin",
+      "roaster": "Common Wealth Coffee",
       "aromaCom": "nut, floral, sweet",
       "aroma": 8,
       "acidityCom": null,
@@ -798,6 +837,7 @@
     {
       "firstName": "Doug",
       "lastName": "Melvin",
+      "roaster": "Common Wealth Coffee",
       "aromaCom": "floral/citrus, sweet",
       "aroma": 7,
       "acidityCom": "mid-high",
@@ -816,6 +856,7 @@
     {
       "firstName": "Keith",
       "lastName": "Nygaard",
+      "roaster": "Common Wealth Coffee",
       "aromaCom": "cocoa",
       "aroma": 6,
       "acidityCom": null,
@@ -834,6 +875,7 @@
     {
       "firstName": "Walter",
       "lastName": "Schlosser",
+      "roaster": "Common Wealth Coffee",
       "aromaCom": "fruity sweet, floral",
       "aroma": 8,
       "acidityCom": null,
@@ -852,6 +894,7 @@
     {
       "firstName": "Justin",
       "lastName": "Tomlinson",
+      "roaster": "Common Wealth Coffee",
       "aromaCom": "fruity, distinct, sweet tea",
       "aroma": 6,
       "acidityCom": null,
@@ -870,6 +913,7 @@
     {
       "firstName": "Larry",
       "lastName": "Samuels",
+      "roaster": "Common Wealth Coffee",
       "aromaCom": "starbucks",
       "aroma": null,
       "acidityCom": "low",
@@ -888,6 +932,7 @@
     {
       "firstName": "Govinda",
       "lastName": "Tamburino",
+      "roaster": "Common Wealth Coffee",
       "aromaCom": "garlic, lemongrass, floral, raspberry",
       "aroma": null,
       "acidityCom": null,
@@ -901,12 +946,12 @@
       "balance": null,
       "cupperScore": 1,
       "score": 76
-    }
-  ],
+    },
 
-  "Boxcar Coffee Roasters": [{
+  {
     "firstName": "Marie",
     "lastName": "Schmidt",
+    "roaster": "Boxcar Coffee Roasters",
     "aromaCom": "floral, tropical fruit",
     "aroma": 7,
     "acidityCom": null,
@@ -925,6 +970,7 @@
     {
       "firstName": "Alex",
       "lastName": "Uribe",
+      "roaster": "Boxcar Coffee Roasters",
       "aromaCom": null,
       "aroma": null,
       "acidityCom": null,
@@ -943,6 +989,7 @@
     {
       "firstName": "David",
       "lastName": "Zuluaga",
+      "roaster": "Boxcar Coffee Roasters",
       "aromaCom": "earthy, grapefruit",
       "aroma": null,
       "acidityCom": null,
@@ -961,6 +1008,7 @@
     {
       "firstName": "Craig",
       "lastName": "Martin",
+      "roaster": "Boxcar Coffee Roasters",
       "aromaCom": "sweet, chocolate, caramel",
       "aroma": 7,
       "acidityCom": null,
@@ -979,6 +1027,7 @@
     {
       "firstName": "Doug",
       "lastName": "Melvin",
+      "roaster": "Boxcar Coffee Roasters",
       "aromaCom": "fruit/chocolate, floral",
       "aroma": 9,
       "acidityCom": "low",
@@ -997,6 +1046,7 @@
     {
       "firstName": "Keith",
       "lastName": "Nygaard",
+      "roaster": "Boxcar Coffee Roasters",
       "aromaCom": "nut",
       "aroma": 6,
       "acidityCom": null,
@@ -1015,6 +1065,7 @@
     {
       "firstName": "Walter",
       "lastName": "Schlosser",
+      "roaster": "Boxcar Coffee Roasters",
       "aromaCom": "fruity",
       "aroma": 8,
       "acidityCom": null,
@@ -1033,6 +1084,7 @@
     {
       "firstName": "Justin",
       "lastName": "Tomlinson",
+      "roaster": "Boxcar Coffee Roasters",
       "aromaCom": "rich, chocolatey",
       "aroma": 7,
       "acidityCom": "strong acidity",
@@ -1051,6 +1103,7 @@
     {
       "firstName": "Larry",
       "lastName": "Samuels",
+      "roaster": "Boxcar Coffee Roasters",
       "aromaCom": "light",
       "aroma": null,
       "acidityCom": "low",
@@ -1069,6 +1122,7 @@
     {
       "firstName": "Govinda",
       "lastName": "Tamburino",
+      "roaster": "Boxcar Coffee Roasters",
       "aromaCom": "savory, dried fruit, wood, carbon, acidic",
       "aroma": null,
       "acidityCom": null,
@@ -1084,4 +1138,3 @@
       "score": 66
     }
   ]
-}

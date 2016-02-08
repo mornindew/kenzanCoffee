@@ -15,17 +15,27 @@
         };
 
         vm.getRoasterScore = function () {
+            return $http.get('../data/roasterNames.json')
+                .then( function(callback) {
+                    vm.roasterNames = callback.data;
+                    console.log(vm.roasterNames);
 
-            return $http.get('../data/data.json')
-                .then(function (response) {
-                    vm.individualScores = individualScores(response);
+                    return $http.get('../data/data.json')
+                        .then(function (response) {
+                            vm.individualScores = individualScores(response);
+                            console.log(vm.individualScores);
 
-                    vm.roasterScores = roasterScores(vm.individualScores);
+                            vm.roasterScores = roasterScores(vm.individualScores, vm.roasterNames);
 
-                    return vm.roasterScores
+                            return vm.roasterScores
 
+                        })
+                        .catch(getDataFailed)
                 })
-                .catch(getDataFailed)
+                .catch ( function() {
+                    console.log('Error returning roaster names key');
+                })
+
 
         }
 
@@ -45,6 +55,7 @@
         }
     }
 
+//**********************************************************************************************************************************//
     /* average function */
     function average(list) {
         //genreate number of item in array
@@ -61,55 +72,53 @@
 
     }
 
+//**********************************************************************************************************************************//
     /* pull scores of desired roaster */
-    function roasterScores(data) {
+    function roasterScores(data, roasterNames) {
         var myData = data;
         var roasterScores = [];
 
-        //iterate through roasters in json file//
-        for (var key in myData) {
-            // check to make sure key exists
-            if (myData.hasOwnProperty(key)) {
-                //define roaster name
-                var name = key;
-                //define array of individuals within roaster object
-                var myArray = myData[key];
-                //initialize output array that will be filled with desired results
-                var output = [];
+        //loop through roasters using roaster names key
+        for (var i = 0; i < roasterNames.length; i++) {
 
-                //loop through individuals objects
-                for (var i = 0; i < myArray.length -1 ; i++) {
-                    //make sure individuals objects contain expected data - slick!
-                    //make sure that property contains a number, if not do not push to output array (would mess up average function otherwise)
-                    if (checkNumber(myArray[i].score)) {
-                        //populate output array with results!
-                        var score = myArray[i].score;
-                        output.push(score);
-                    }
-                    else {
-                        console.log(checkNumber(myArray[i].score));
-                        console.log(validateData(myArray[i]));
-                    }
+            //initialize output array that will be filled with desired results
+            var output = [];
+
+        //loop through individuals objects
+            for (var j = 0; j < myData.length; j++) {
+
+                //make sure that property contains a number, if not do not push to output array (would mess up average function otherwise)
+                if (myData[j].roaster == roasterNames[i]
+                    && validateData(myData[j],'roasterScores')
+                    && checkNumber(myData[j].score)) {
+                    //populate output array with results!
+                    var score = myData[j].score;
+                    output.push(score);
                 }
             }
+
             //average all results to get overall score
             var avg = average(output);
 
             //push roaster name and overall score to a results array
             roasterScores.push({
-                name: name,
+                name: roasterNames[i],
                 score: avg
-            })
+            });
+
         }
 
     return roasterScores
     }
 
+//**********************************************************************************************************************************//
     //check if object has expected keys as a form of data validation//
-    function validateData(obj) {
+    function validateData(obj, functionName) {
+
 
         //define object keys as array//
         var keys = [];
+        var expectedKeys = [];
 
         for (var key in obj) {
             if (obj.hasOwnProperty(key)) {
@@ -117,38 +126,50 @@
             }
         }
 
-        //define expected keys as array//
-        var expectedKeys = ["firstName",
-            "lastName",
-            "aromaCom",
-            "aroma",
-            "acidityCom",
-            "acidity",
-            "mouthFeelCom",
-            "mouthFeel",
-            "flavourCom",
-            "flavour",
-            "aftertasteCom",
-            "aftertaste",
-            "balance",
-            "cupperScore",
-            "score"];
+        if (functionName == 'individualScores') {
+            //define expected keys as array//
+            expectedKeys = ["firstName",
+                "lastName",
+                "roaster",
+                "aromaCom",
+                "aroma",
+                "acidityCom",
+                "acidity",
+                "mouthFeelCom",
+                "mouthFeel",
+                "flavourCom",
+                "flavour",
+                "aftertasteCom",
+                "aftertaste",
+                "balance",
+                "cupperScore",
+                "score"];
+        }
+        else if (functionName == 'roasterScores') {
+            expectedKeys = ["name",
+                "roaster",
+                "score"
+            ];
+        }
 
         //define array prototype that can be used to check if two arrays equal each other by comparing value by value//
         Array.prototype.equals = function(arr) {
-            //if arr is falsey (check out the lingo) then return false
+            //if arr is falsey then return false
             if (!arr) {
+                console.log('variable is not an array');
                 return false
             }
 
             //if lengths don't match then return false
             if(this.length != arr.length) {
+                console.log('arrays have different length');
                 return false
             }
 
             //compare item to item, if items are not equal then return false
             for (var i=0; i < this.length; i++) {
                 if (this[i] != arr[i]) {
+                    console.log('arrays contain different values');
                     return false
                 }
             }
@@ -162,34 +183,27 @@
 
     }
 
+//**********************************************************************************************************************************//
     //calculate individual scores//
     function individualScores(response) {
         var myData = response.data;
-        //intitialize individual scores object//
-        var indivScores = {};
 
-        //iterate through roasters //
-        for (var key in myData) {
-            //ensure key exists
-            if (myData.hasOwnProperty(key)) {
-                //define array of individuals to iterate through
-                var myArray = myData[key];
-
-                //initialize array for roaster within new individual scores object //
-                indivScores[key] = [];
+                //initialize array for scores //
+                var indivScores = [];
 
                 //iterate through people //
-                for (var i = 0; i < myArray.length; i++) {
+                for (var i = 0; i < myData.length; i++) {
 
                     //validate data to ensure that individual object contains desired information //
                     //ensure that property contains numeric answer
-                    if (validateData(myArray[i]) && checkNumber(JSON.parse(myArray[i].score))) {
+                    if (validateData(myData[i], 'individualScores') && checkNumber(JSON.parse(myData[i].score))) {
 
                             //define individuals array as variable
-                            var individual = myArray[i];
+                            var individual = myData[i];
 
                             //define name of individual using JSON parser
                             var name = individual['firstName'] + " " +individual['lastName'];
+                            var roaster = individual['roaster'];
 
                             //initialize score variable
                             var score = 0;
@@ -203,22 +217,19 @@
                                 score += individual[prop];
                             }
 
-                            var thisRoasterScores = indivScores[key];
-                            thisRoasterScores.push({
+                            indivScores.push({
                                 name: name,
+                                roaster: roaster,
                                 score: score + 50
                             });
 
                     }
                 }
 
-
-            }
-        }
-
         return indivScores;
     }
 
+//**********************************************************************************************************************************//
     function getDataFailed(e) {
         var newMessage = 'XHR Failed for getData';
         if (e.data && e.data.description) {

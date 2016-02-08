@@ -16,8 +16,10 @@
                     vm.rank.push(i + 1);
                 }
 
-            }, function (error) {
-                console.log(error)
+            });
+        promise.catch(
+            function () {
+                console.log('There was an error with the data transfer of roaster scores')
             });
 
     }]);
