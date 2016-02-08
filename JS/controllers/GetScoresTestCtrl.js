@@ -5,7 +5,7 @@
 
         var vm = this;
 
-        var promise = calcScore.getRoasterScore();
+        var promise = calcScore.getRoasterScores();
 
         promise.then(
             function (callback) {

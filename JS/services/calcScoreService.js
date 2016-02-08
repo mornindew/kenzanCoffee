@@ -14,7 +14,7 @@
 
         };
 
-        vm.getRoasterScore = function () {
+        vm.getRoasterScores = function () {
             return $http.get('../data/roasterNames.json')
                 .then( function(callback) {
                     vm.roasterNames = callback.data;
@@ -142,8 +142,7 @@
                 "aftertasteCom",
                 "aftertaste",
                 "balance",
-                "cupperScore",
-                "score"];
+                "cupperScore"];
         }
         else if (functionName == 'roasterScores') {
             expectedKeys = ["name",
@@ -196,7 +195,7 @@
 
                     //validate data to ensure that individual object contains desired information //
                     //ensure that property contains numeric answer
-                    if (validateData(myData[i], 'individualScores') && checkNumber(JSON.parse(myData[i].score))) {
+                    if (validateData(myData[i], 'individualScores')) {
 
                             //define individuals array as variable
                             var individual = myData[i];
@@ -214,7 +213,11 @@
                             //iterate through desired properties using JSON parser and add to overall score
                             for (var j = 0; j < desiredProps.length; j++) {
                                 var prop = desiredProps[j];
+
+                                //ensure property being added is a number
+                                if (checkNumber(individual[prop])) {
                                 score += individual[prop];
+                                }
                             }
 
                             indivScores.push({

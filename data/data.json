@@ -14,8 +14,7 @@
     "aftertasteCom": null,
     "aftertaste": 7,
     "balance": "too thin",
-    "cupperScore": -1,
-    "score": 79
+    "cupperScore": -1
   },
 
     {
@@ -33,8 +32,7 @@
       "aftertasteCom": "too acid",
       "aftertaste": 2,
       "balance": "acidy, yucky",
-      "cupperScore": -3,
-      "score": 65
+      "cupperScore": -3
     },
 
     {
@@ -52,8 +50,7 @@
       "aftertasteCom": null,
       "aftertaste": 8,
       "balance": null,
-      "cupperScore": -1,
-      "score": 80
+      "cupperScore": -1
     },
 
     {
@@ -71,8 +68,7 @@
       "aftertasteCom": null,
       "aftertaste": 6,
       "balance": "mild, not a lot of distinct flavors",
-      "cupperScore": 0,
-      "score": 81
+      "cupperScore": 0
     },
 
     {
@@ -90,8 +86,7 @@
       "aftertasteCom": "slightly bitter",
       "aftertaste": 7,
       "balance": null,
-      "cupperScore": 3,
-      "score": 93
+      "cupperScore": 3
     },
 
     {
@@ -109,8 +104,7 @@
       "aftertasteCom": null,
       "aftertaste": 7,
       "balance": null,
-      "cupperScore": 3,
-      "score": 85
+      "cupperScore": 3
     },
 
     {
@@ -128,8 +122,7 @@
       "aftertasteCom": "burnt",
       "aftertaste": 6,
       "balance": null,
-      "cupperScore": 2,
-      "score": 89
+      "cupperScore": 2
     },
 
     {
@@ -147,8 +140,7 @@
       "aftertasteCom": "ashy",
       "aftertaste": 6,
       "balance": null,
-      "cupperScore": -2,
-      "score": 81
+      "cupperScore": -2
     },
 
     {
@@ -166,8 +158,7 @@
       "aftertasteCom": "none",
       "aftertaste": 9,
       "balance": null,
-      "cupperScore": 4,
-      "score": 89
+      "cupperScore": 4
     },
 
     {
@@ -185,8 +176,7 @@
       "aftertasteCom": null,
       "aftertaste": 9,
       "balance": null,
-      "cupperScore": 4,
-      "score": 85
+      "cupperScore": 4
     },
 
   {
@@ -203,8 +193,7 @@
     "aftertasteCom": "nice flavor throughout",
     "aftertaste": 8,
     "balance": "loved it",
-    "cupperScore": 3,
-    "score": 92
+    "cupperScore": 3
   },
 
     {
@@ -222,8 +211,7 @@
       "aftertasteCom": "sweet :)",
       "aftertaste": 7,
       "balance": "solid",
-      "cupperScore": 1,
-      "score": 84
+      "cupperScore": 1
     },
 
     {
@@ -241,8 +229,7 @@
       "aftertasteCom": null,
       "aftertaste": 6,
       "balance": null,
-      "cupperScore": 4,
-      "score": 78
+      "cupperScore": 4
     },
 
     {
@@ -260,8 +247,7 @@
       "aftertasteCom": null,
       "aftertaste": 5,
       "balance": "overroasted, burnt",
-      "cupperScore": -5,
-      "score": 72
+      "cupperScore": -5
     },
 
     {
@@ -279,8 +265,7 @@
       "aftertasteCom": "neutral",
       "aftertaste": 8,
       "balance": null,
-      "cupperScore": 3,
-      "score": 91
+      "cupperScore": 3
     },
 
     {
@@ -298,8 +283,7 @@
       "aftertasteCom": null,
       "aftertaste": 6,
       "balance": null,
-      "cupperScore": 3,
-      "score": 84
+      "cupperScore": 3
     },
 
     {
@@ -317,8 +301,7 @@
       "aftertasteCom": "chocolate",
       "aftertaste": 8,
       "balance": null,
-      "cupperScore": 2,
-      "score": 89
+      "cupperScore": 2
     },
 
     {
@@ -336,8 +319,7 @@
       "aftertasteCom": "mild",
       "aftertaste": 7,
       "balance": null,
-      "cupperScore": 0,
-      "score": 83
+      "cupperScore": 0
     },
 
     {
@@ -355,8 +337,7 @@
       "aftertasteCom": "none",
       "aftertaste": 9,
       "balance": null,
-      "cupperScore": 3,
-      "score": 83
+      "cupperScore": 3
     },
 
     {
@@ -374,8 +355,7 @@
       "aftertasteCom": null,
       "aftertaste": 3,
       "balance": null,
-      "cupperScore": 0,
-      "score": 69
+      "cupperScore": 0
     },
 
   {
@@ -393,8 +373,7 @@
     "aftertasteCom": null,
     "aftertaste": 7,
     "balance": "good",
-    "cupperScore": 1,
-    "score": 85
+    "cupperScore": 1
   },
 
     {
@@ -412,8 +391,7 @@
       "aftertasteCom": "acid",
       "aftertaste": 4,
       "balance": "tastes like acidy water",
-      "cupperScore": -1,
-      "score": 72
+      "cupperScore": -1
     },
 
     {
@@ -431,8 +409,7 @@
       "aftertasteCom": null,
       "aftertaste": 6,
       "balance": null,
-      "cupperScore": 2,
-      "score": 75
+      "cupperScore": 2
     },
 
     {
@@ -450,8 +427,7 @@
       "aftertasteCom": null,
       "aftertaste": 8,
       "balance": "enjoyed, smooth, well defined",
-      "cupperScore": 3,
-      "score": 90
+      "cupperScore": 3
     },
 
     {
@@ -469,8 +445,7 @@
       "aftertasteCom": "sour/bitter",
       "aftertaste": 6,
       "balance": null,
-      "cupperScore": 1,
-      "score": 84
+      "cupperScore": 1
     },
 
     {
@@ -488,8 +463,7 @@
       "aftertasteCom": null,
       "aftertaste": 6,
       "balance": null,
-      "cupperScore": 2,
-      "score": 85
+      "cupperScore": 2
     },
 
     {
@@ -507,8 +481,7 @@
       "aftertasteCom": null,
       "aftertaste": 7,
       "balance": null,
-      "cupperScore": 4,
-      "score": 89
+      "cupperScore": 4
     },
 
     {
@@ -526,8 +499,7 @@
       "aftertasteCom": null,
       "aftertaste": 6,
       "balance": null,
-      "cupperScore": -2,
-      "score": 77
+      "cupperScore": -2
     },
 
     {
@@ -545,8 +517,7 @@
       "aftertasteCom": "none",
       "aftertaste": 9,
       "balance": null,
-      "cupperScore": 2,
-      "score": 86
+      "cupperScore": 2
     },
 
     {
@@ -564,8 +535,7 @@
       "aftertasteCom": null,
       "aftertaste": 6,
       "balance": null,
-      "cupperScore": 1,
-      "score": 74
+      "cupperScore": 1
     },
 
   {
@@ -583,8 +553,7 @@
     "aftertasteCom": "lingering bitter",
     "aftertaste": 6,
     "balance": "bit acidic",
-    "cupperScore": 0,
-    "score": 81
+    "cupperScore": 0
   },
 
     {
@@ -602,8 +571,7 @@
       "aftertasteCom": null,
       "aftertaste": 4,
       "balance": "acid",
-      "cupperScore": 5,
-      "score": 81
+      "cupperScore": 5
     },
 
     {
@@ -621,8 +589,7 @@
       "aftertasteCom": null,
       "aftertaste": 9,
       "balance": null,
-      "cupperScore": 5,
-      "score": 91
+      "cupperScore": 5
     },
 
     {
@@ -640,8 +607,7 @@
       "aftertasteCom": null,
       "aftertaste": 6,
       "balance": "boring, mold chocolate",
-      "cupperScore": 0,
-      "score": 81
+      "cupperScore": 0
     },
 
     {
@@ -659,8 +625,7 @@
       "aftertasteCom": "light bitter",
       "aftertaste": 7,
       "balance": null,
-      "cupperScore": 2,
-      "score": 86
+      "cupperScore": 2
     },
 
     {
@@ -678,8 +643,7 @@
       "aftertasteCom": null,
       "aftertaste": 7,
       "balance": null,
-      "cupperScore": 2,
-      "score": 86
+      "cupperScore": 2
     },
 
     {
@@ -697,8 +661,7 @@
       "aftertasteCom": "chocolate",
       "aftertaste": 9,
       "balance": null,
-      "cupperScore": 4,
-      "score": 94
+      "cupperScore": 4
     },
 
     {
@@ -716,8 +679,7 @@
       "aftertasteCom": "nice, balanced",
       "aftertaste": 8,
       "balance": null,
-      "cupperScore": 4,
-      "score": 88
+      "cupperScore": 4
     },
 
     {
@@ -735,8 +697,7 @@
       "aftertasteCom": "none",
       "aftertaste": 9,
       "balance": null,
-      "cupperScore": 4,
-      "score": 88
+      "cupperScore": 4
     },
 
     {
@@ -754,8 +715,7 @@
       "aftertasteCom": null,
       "aftertaste": 4,
       "balance": null,
-      "cupperScore": -1,
-      "score": 66
+      "cupperScore": -1
     },
 
   {
@@ -773,8 +733,7 @@
     "aftertasteCom": "bit bitter",
     "aftertaste": 6,
     "balance": "bit bitter",
-    "cupperScore": 0,
-    "score": 85
+    "cupperScore": 0
   },
 
     {
@@ -792,8 +751,7 @@
       "aftertasteCom": null,
       "aftertaste": 5,
       "balance": "offended, tastes like dirty water",
-      "cupperScore": -2,
-      "score": 72
+      "cupperScore": -2
     },
 
     {
@@ -811,8 +769,7 @@
       "aftertasteCom": null,
       "aftertaste": 7,
       "balance": null,
-      "cupperScore": 4,
-      "score": 83
+      "cupperScore": 4
     },
 
     {
@@ -830,8 +787,7 @@
       "aftertasteCom": null,
       "aftertaste": 7,
       "balance": "enjoyed, floral and sweet",
-      "cupperScore": 3,
-      "score": 91
+      "cupperScore": 3
     },
 
     {
@@ -849,8 +805,7 @@
       "aftertasteCom": "butter",
       "aftertaste": 7,
       "balance": null,
-      "cupperScore": 3,
-      "score": 90
+      "cupperScore": 3
     },
 
     {
@@ -868,8 +823,7 @@
       "aftertasteCom": null,
       "aftertaste": 6,
       "balance": null,
-      "cupperScore": 4,
-      "score": 88
+      "cupperScore": 4
     },
 
     {
@@ -887,8 +841,7 @@
       "aftertasteCom": null,
       "aftertaste": 7,
       "balance": null,
-      "cupperScore": 4,
-      "score": 93
+      "cupperScore": 4
     },
 
     {
@@ -906,8 +859,7 @@
       "aftertasteCom": null,
       "aftertaste": 6,
       "balance": null,
-      "cupperScore": 0,
-      "score": 80
+      "cupperScore": 0
     },
 
     {
@@ -925,8 +877,7 @@
       "aftertasteCom": "still here",
       "aftertaste": 5,
       "balance": null,
-      "cupperScore": 2,
-      "score": 76
+      "cupperScore": 2
     },
 
     {
@@ -944,8 +895,7 @@
       "aftertasteCom": null,
       "aftertaste": 6,
       "balance": null,
-      "cupperScore": 1,
-      "score": 76
+      "cupperScore": 1
     },
 
   {
@@ -963,8 +913,7 @@
     "aftertasteCom": null,
     "aftertaste": 5,
     "balance": "coffee was cold",
-    "cupperScore": 0,
-    "score": 80
+    "cupperScore": 0
   },
 
     {
@@ -982,8 +931,7 @@
       "aftertasteCom": null,
       "aftertaste": null,
       "balance": null,
-      "cupperScore": null,
-      "score": null
+      "cupperScore": null
     },
 
     {
@@ -1001,8 +949,7 @@
       "aftertasteCom": null,
       "aftertaste": 6,
       "balance": null,
-      "cupperScore": 2,
-      "score": 79
+      "cupperScore": 2
     },
 
     {
@@ -1020,8 +967,7 @@
       "aftertasteCom": null,
       "aftertaste": 8,
       "balance": "undertoned, savory, not offensive but not remarkable",
-      "cupperScore": 2,
-      "score": 88
+      "cupperScore": 2
     },
 
     {
@@ -1039,8 +985,7 @@
       "aftertasteCom": "none",
       "aftertaste": 8,
       "balance": null,
-      "cupperScore": 3,
-      "score": 93
+      "cupperScore": 3
     },
 
     {
@@ -1058,8 +1003,7 @@
       "aftertasteCom": null,
       "aftertaste": 6,
       "balance": null,
-      "cupperScore": 4,
-      "score": 91
+      "cupperScore": 4
     },
 
     {
@@ -1077,8 +1021,7 @@
       "aftertasteCom": "burnt",
       "aftertaste": 5,
       "balance": null,
-      "cupperScore": 3,
-      "score": 90
+      "cupperScore": 3
     },
 
     {
@@ -1096,8 +1039,7 @@
       "aftertasteCom": "long lingering chocolate",
       "aftertaste": 8,
       "balance": null,
-      "cupperScore": 3,
-      "score": 88
+      "cupperScore": 3
     },
 
     {
@@ -1115,8 +1057,7 @@
       "aftertasteCom": "better than E",
       "aftertaste": 6,
       "balance": null,
-      "cupperScore": 2,
-      "score": 77
+      "cupperScore": 2
     },
 
     {
@@ -1134,7 +1075,6 @@
       "aftertasteCom": null,
       "aftertaste": 4,
       "balance": null,
-      "cupperScore": 0,
-      "score": 66
+      "cupperScore": 0
     }
   ]
