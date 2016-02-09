@@ -41,8 +41,6 @@
 
         vm.resultsTable = function(resultsCategory, resultsDesired) {
 
-
-
             return $http.get('../data/data.json')
                 .then( function(callback) {
                     if (resultsDesired) {
@@ -158,8 +156,7 @@
 
         if (functionName == 'individualScores') {
             //define expected keys as array//
-            expectedKeys = ["firstName",
-                "lastName",
+            expectedKeys = ["name",
                 "roaster",
                 "aromaCom",
                 "aroma",
@@ -231,7 +228,7 @@
                             var individual = myData[i];
 
                             //define name of individual using JSON parser
-                            var name = individual['firstName'] + " " +individual['lastName'];
+                            var name = individual['name'];
                             var roaster = individual['roaster'];
 
                             //initialize score variable
@@ -273,11 +270,10 @@
         //for each object
         for (var i = 0; i < myData.length; i++) {
             //if desired result is a person
-            if (resultsCategory =='individual' && resultsDesired == myData[i].firstName) {
+            if (resultsCategory =='individual' && resultsDesired == myData[i].name) {
                 myObject = myData[i];
 
-                delete myObject['firstName'];
-                delete myObject['lastName'];
+                delete myObject['name'];
 
                 //push all objects with data from that person to results array
                 results.push(myObject);
@@ -285,7 +281,6 @@
             else if (resultsCategory =='roaster' && resultsDesired == myData[i].roaster) {
                 myObject = myData[i];
 
-                delete myObject ['lastName'];
                 delete myObject['roaster'];
 
                 //push all objects with data from that person to results array
@@ -308,7 +303,7 @@
         for (var i = 0; i < myData.length; i++) {
             var myObject = myData[i];
             for (var key in myObject) {
-                if (key !== 'firstName' && key !== "lastName") {
+                if (key !== 'name') {
                 myKeys.pushIfUnique(key);
                 }
             }

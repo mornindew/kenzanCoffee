@@ -28,11 +28,11 @@
         </div> <!-- closes button div -->
 
         <!-- wrapper of tabular results including dropdown menu -->
-        <div class = "tabularResults" >
+        <div class = "tabularResults">
 
             <!-- Wrap individual results table -->
             <section class="individual table-results">
-                <h2 class="contentHeading"> {{vm.tableHeading | capitalize}} </h2>
+                <h2 class="contentHeading tooltips" tooltip="display me"> {{vm.tableHeading | capitalize}} </h2>
 
 
                 <!-- dropdown menu wrapper for individuals -->
@@ -44,8 +44,8 @@
                     </select>
                 </div> <!-- closes dropdown menu div -->
 
-                <!-- hard coded individual results table -->
-                <table class="truncate">
+                <!-- dynamically generated results table -->
+                <table >
                     <tr>
                         <td> {{vm.resultsDesired}} </td> <td ng-repeat="key in vm.keys | limitTo: -12">{{key | camelCase | tableResultsKey | capitalize}}</td>
                     </tr>
