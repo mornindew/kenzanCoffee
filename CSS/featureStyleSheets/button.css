@@ -3,11 +3,10 @@
 
 /* Add size, display style, spacing, color, and rounded edges */
 button {
-    height: 30px;
-    width: 150px;
     display: inline-block;
-    font-size: 1em;
     margin: 25px auto 10px;
+    font-size: 1em;
+    white-space: nowrap;
     background-color: #ffb16e;
     border: solid 1px #FF7F00;
     border-radius: 5px;

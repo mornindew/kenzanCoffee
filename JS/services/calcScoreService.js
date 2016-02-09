@@ -1,9 +1,9 @@
 //this service will be used to generate each roasters average score for the banner table
 
 (function() {
-    var app = angular.module('calcScoreService', []);
+    var app = angular.module('calcScoreService', ['utilitiesService']);
 
-    app.service('calcScore', ['$http', function ($http) {
+    app.service('calcScore', ['$http','utilities', function ($http, utilities) {
         var vm = this;
 
         vm.getIndividualScores = function () {
@@ -92,7 +92,65 @@
 
         // return average value rounded to the tenth //
         return avg = Math.round(10 * (sum / length)) / 10;
+    }
+//**********************************************************************************************************************************//
+    //calculate individual scores//
+    function individualScores(response) {
+        var myData = response.data;
 
+        //initialize array for scores //
+        var indivScores = [];
+
+        //iterate through people //
+        for (var i = 0; i < myData.length; i++) {
+
+            //validate data to ensure that individual object contains desired information //
+            //ensure that property contains numeric answer
+            if (validateData(myData[i], 'individualScores')) {
+
+                //define individuals array as variable
+                var individual = myData[i];
+
+                //define name of individual using JSON parser
+                var name = individual['name'];
+                var roaster = individual['roaster'];
+
+                //initialize score variable
+                var score = 0;
+
+                //define score properties to iterate through
+                var desiredProps = ["aroma","acidity", "mouthFeel", "flavour", "aftertaste","cupperScore"];
+
+                //iterate through desired properties using JSON parser and add to overall score
+                for (var j = 0; j < desiredProps.length; j++) {
+                    var prop = desiredProps[j];
+
+                    //ensure property being added is a number
+                    if (checkNumber(individual[prop])) {
+                        score += individual[prop];
+                    }
+                }
+
+                //only add 50 to score if score > 0. Prevents unscored coffee from displaying as score = 50
+                if (score > 0) {
+                    indivScores.push({
+                        name: name,
+                        roaster: roaster,
+                        score: score + 50
+                    });
+                }
+                //defining score as null prevents it from affecting roaster score average.
+                else {
+                    indivScores.push({
+                        name: name,
+                        roaster: roaster,
+                        score: null
+                    });
+                }
+            }
+        }
+
+        return indivScores;
     }
 
 //**********************************************************************************************************************************//
@@ -202,56 +260,6 @@
         //return whether keys are equal or not//
         return (expectedKeys.equals(keys))
 
-    }
-
-//**********************************************************************************************************************************//
-    //calculate individual scores//
-    function individualScores(response) {
-        var myData = response.data;
-
-                //initialize array for scores //
-                var indivScores = [];
-
-                //iterate through people //
-                for (var i = 0; i < myData.length; i++) {
-
-                    //validate data to ensure that individual object contains desired information //
-                    //ensure that property contains numeric answer
-                    if (validateData(myData[i], 'individualScores')) {
-
-                            //define individuals array as variable
-                            var individual = myData[i];
-
-                            //define name of individual using JSON parser
-                            var name = individual['name'];
-                            var roaster = individual['roaster'];
-
-                            //initialize score variable
-                            var score = 0;
-
-                            //define score properties to iterate through
-                            var desiredProps = ["aroma","acidity", "mouthFeel", "flavour", "aftertaste","cupperScore"];
-
-                            //iterate through desired properties using JSON parser and add to overall score
-                            for (var j = 0; j < desiredProps.length; j++) {
-                                var prop = desiredProps[j];
-
-                                //ensure property being added is a number
-                                if (checkNumber(individual[prop])) {
-                                score += individual[prop];
-                                }
-                            }
-
-                            indivScores.push({
-                                name: name,
-                                roaster: roaster,
-                                score: score + 50
-                            });
-
-                    }
-                }
-
-        return indivScores;
     }
 
     //**********************************************************************************************************************************//
