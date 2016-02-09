@@ -1,5 +1,5 @@
 <!-- Full results section wrapper -->
-<div class="results" ng-app="loadDropDown">
+<div class="results" ng-app="CupOfExcellenceApp">
 
     <!-- full banner table wrapper including title -->
     <section class="bannerTable">
@@ -34,26 +34,27 @@
     </section> <!-- closes the full banner table div including title-->
 
     <!-- full wrapper of tabular results table including toggle buttons -->
-    <section ng-controller="dropDown">
+    <section ng-controller="TableResultsHeaderCtrl as tableHeaderCtrl">
 
         <!-- button wrapper -->
         <div class="button">
-            <button ng-click="resultsCategory = 'individual' " id="individualResult"> Individual Results </button>
-            <button ng-click="resultsCategory = 'roaster' " id="roasterResult"> Roaster Results </button>
+            <button id="individualResult" ng-click="tableHeaderCtrl.setResultsCategory('individual')"> Individual Results </button>
+            <button id="roasterResult" ng-click="tableHeaderCtrl.setResultsCategory('roaster')"> Roaster Results </button>
         </div> <!-- closes button div -->
-
 
         <!-- wrapper of tabular results including dropdown menu -->
         <div class = "tabularResults" >
 
             <!-- Wrap individual results table -->
             <section class="individual table-results">
-                <h2 class="contentHeading"> Individual Results </h2>
+                <h2 class="contentHeading"> {{tableHeaderCtrl.tableHeading | capitalize}} </h2>
+
 
                 <!-- dropdown menu wrapper for individuals -->
-                <div class="dropdown">
+                <div class="dropdown" >
                     <p> Select Whose Results to See</p>
-                    <select ng-model="resultsDesired" id="individual" ng-options="individual for individual in individualNames">
+                    <select id="individual" ng-model="tableHeaderCtrl.resultsDesired"
+                            ng-options="results for results in tableHeaderCtrl.dropDownArray">
                     </select>
                 </div> <!-- closes dropdown menu div -->
 
@@ -163,123 +164,6 @@
                 </table> <!-- closes individual table -->
             </section> <!-- closes individual table section -->
 
-            <!-- wraps roaster results table -->
-            <section class="roaster table-results">
-
-                <h2 class="contentHeading"> Roaster Results </h2>
-
-                <!-- dropdown menu wrapper for roasters -->
-                <div class="dropdown">
-                    <p> Select Whose Results to See</p>
-                    <select ng-model="resultsDesired" id="roasters" ng-options="roaster for roaster in roasterNames">
-                    </select>
-                </div> <!-- closes roaster dropdown menu -->
-
-                <!-- hard coded roaster results table -->
-                <table class="truncate">
-                    <tr>
-                        <td> Middle State </td> <td> Aroma </td> <td> Aroma Score </td> <td> Acidity </td>
-                        <td> Acidity Score </td> <td> Mouthfeel </td> <td> Mouthfeel Score </td> <td> Flavour </td> <td> Flavour Score </td>
-                        <td> Aftertaste</td> <td> Aftertaste Score</td> <td> Balanced </td> <td> Cuppers Score</td> <td> Overall Score </td>
-                    </tr>
-                    <tr>
-                        <td> Marie </td>
-                        <td> cherry, fruity, light</td>
-                        <td> 7 </td>
-                        <td> </td>
-                        <td> 5 </td>
-                        <td> thin </td>
-                        <td> 5 </td>
-                        <td> thin flavour </td>
-                        <td> 6 </td>
-                        <td>  </td>
-                        <td> 7 </td>
-                        <td> too thin </td>
-                        <td> -1 </td>
-                        <td> 79 </td>
-                    </tr>
-                    <tr>
-                        <td> Craig </td>
-                        <td> roasty, bold, chocolate</td>
-                        <td> 9 </td>
-                        <td> mild </td>
-                        <td> 7 </td>
-                        <td>  </td>
-                        <td> 7 </td>
-                        <td> dark, roasty </td>
-                        <td> 8 </td>
-                        <td> nice flavor throughout </td>
-                        <td> 8 </td>
-                        <td> loved it </td>
-                        <td> 3 </td>
-                        <td> 92 </td>
-                    </tr>
-                    <tr>
-                        <td> Justin </td>
-                        <td> citrus, chocolate</td>
-                        <td> 6 </td>
-                        <td> nice acidity </td>
-                        <td> 8 </td>
-                        <td> a bit thin </td>
-                        <td> 6 </td>
-                        <td> overall good </td>
-                        <td> 7 </td>
-                        <td>  </td>
-                        <td> 7 </td>
-                        <td> good </td>
-                        <td> 1 </td>
-                        <td> 85 </td>
-                    </tr>
-                    <tr>
-                        <td> Keith </td>
-                        <td> mild, carmel, overripe</td>
-                        <td> 6 </td>
-                        <td> </td>
-                        <td> 6 </td>
-                        <td> a bit thin </td>
-                        <td> 6 </td>
-                        <td> too acidic for my liking </td>
-                        <td> 7 </td>
-                        <td> lingering bitter </td>
-                        <td> 6 </td>
-                        <td> bit acidic </td>
-                        <td> 0 </td>
-                        <td> 81 </td>
-                    </tr>
-                    <tr>
-                        <td> Walter </td>
-                        <td> overripe fruit, floral, carmel </td>
-                        <td> 9 </td>
-                        <td> </td>
-                        <td> 7 </td>
-                        <td>  </td>
-                        <td> 6 </td>
-                        <td>  </td>
-                        <td> 7 </td>
-                        <td> bit bitter </td>
-                        <td> 6 </td>
-                        <td> bit bitter </td>
-                        <td> 0 </td>
-                        <td> 85 </td>
-                    </tr>
-                    <tr>
-                        <td> Alex </td>
-                        <td> floral, tropical fruit </td>
-                        <td> 7 </td>
-                        <td> </td>
-                        <td> 5 </td>
-                        <td>  </td>
-                        <td> 7 </td>
-                        <td>  </td>
-                        <td> 6 </td>
-                        <td>  </td>
-                        <td> 5 </td>
-                        <td> cold... </td>
-                        <td> 0 </td>
-                        <td> 80 </td>
-                    </tr>
-                </table> <!-- closes roaster table -->
-            </section> <!-- closes roaster table section -->
         </div> <!-- closes tabular results not including buttons -->
     </section> <!-- closes full tabular results section including buttons-->
 
