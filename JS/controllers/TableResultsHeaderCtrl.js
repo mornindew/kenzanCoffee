@@ -1,7 +1,7 @@
 (function () {
-    var app = angular.module('TableResultsHeader', ['dropDownDataService', 'capitalizeFilter']);
+    var app = angular.module('TableResultsHeader', ['dropDownDataService', 'capitalizeFilter', 'calcScoreService', 'tableResultsKeyFilter', 'camelCaseFilter']);
 
-    app.controller('TableResultsHeaderCtrl',['dropDownData', function (dropDownData) {
+    app.controller('TableResultsHeaderCtrl',['dropDownData', 'calcScore', function (dropDownData, calcScore) {
 
         var vm = this;
 
@@ -22,6 +22,27 @@
         vm.setResultsCategory('individual');
 
         vm.tableHeading = vm.resultsCategory + ' Results';
+
+
+        //Generate results table
+        vm.setResultsTable = function(resultsCategory, resultsDesired) {
+        var promise = calcScore.resultsTable(vm.resultsCategory,vm.resultsDesired);
+
+        promise.then( function(callback) {
+            if (callback.keys) {
+                    vm.keys = callback.keys;
+            }
+            if (callback.data) {
+                vm.data = callback.data;
+            }
+        });
+        promise.catch( function() {
+            console.log('Error with loading the results table')
+        })
+        };
+
+        //Set initial conditions for results table
+        vm.setResultsTable(vm.resultsCategory,vm.resultsDesired)
 
     }]);
 })();

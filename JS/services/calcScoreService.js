@@ -18,23 +18,53 @@
             return $http.get('../data/roasterNames.json')
                 .then( function(callback) {
                     vm.roasterNames = callback.data;
-                    console.log(vm.roasterNames);
 
                     return $http.get('../data/data.json')
                         .then(function (response) {
                             vm.individualScores = individualScores(response);
-                            console.log(vm.individualScores);
 
                             vm.roasterScores = roasterScores(vm.individualScores, vm.roasterNames);
 
                             return vm.roasterScores
 
                         })
-                        .catch(getDataFailed)
+                        .catch( function() {
+                            console.log('Error loading data.json from server')
+                        });
                 })
                 .catch ( function() {
                     console.log('Error returning roaster names key');
                 })
+
+
+        };
+
+        vm.resultsTable = function(resultsCategory, resultsDesired) {
+
+
+
+            return $http.get('../data/data.json')
+                .then( function(callback) {
+                    if (resultsDesired) {
+                        vm.output = {};
+                        vm.keys = getKeys(callback);
+                        vm.tableData = populateTable(callback, resultsCategory, resultsDesired);
+                        return output = {
+                            keys: vm.keys,
+                            data: vm.tableData
+                        }
+                    }
+                    else {
+                        output = {
+                            keys: getKeys(callback)
+                        };
+                        return output;
+                    }
+                })
+                .catch( function() {
+                    console.log('Error loading data.json from server')
+                });
+
 
 
         }
@@ -232,15 +262,76 @@
         return indivScores;
     }
 
-//**********************************************************************************************************************************//
-    function getDataFailed(e) {
-        var newMessage = 'XHR Failed for getData';
-        if (e.data && e.data.description) {
-            newMessage = newMessage + '\n' + e.data.description;
+    //**********************************************************************************************************************************//
+    function populateTable(response, resultsCategory, resultsDesired) {
+        myData = response.data;
+
+        //initialize results array
+        var results = [];
+        var keys = getKeys(response);
+
+        //for each object
+        for (var i = 0; i < myData.length; i++) {
+            //if desired result is a person
+            if (resultsCategory =='individual' && resultsDesired == myData[i].firstName) {
+                myObject = myData[i];
+
+                delete myObject['firstName'];
+                delete myObject['lastName'];
+
+                //push all objects with data from that person to results array
+                results.push(myObject);
+            }
+            else if (resultsCategory =='roaster' && resultsDesired == myData[i].roaster) {
+                myObject = myData[i];
+
+                delete myObject ['lastName'];
+                delete myObject['roaster'];
+
+                //push all objects with data from that person to results array
+                results.push(myObject);
+
+            }
+
         }
-        e.data.description = newMessage;
-        logger.error(newMessage);
-        return $q.reject(e);
+        return results
     }
+
+    //**********************************************************************************************************************************//
+    function getKeys(response) {
+        myData = response.data;
+
+        //initialize keys array
+        var myKeys = [];
+
+        //for each object
+        for (var i = 0; i < myData.length; i++) {
+            var myObject = myData[i];
+            for (var key in myObject) {
+                if (key !== 'firstName' && key !== "lastName") {
+                myKeys.pushIfUnique(key);
+                }
+            }
+        }
+
+        return myKeys
+    }
+
+    Array.prototype.inArray = function(value) {
+        for (var i = 0; i <this.length; i++) {
+            if (value == this[i]) {
+                return false
+            }
+        }
+        return true
+    };
+
+    Array.prototype.pushIfUnique = function(value) {
+      if (this.inArray(value)) {
+          this.push(value);
+      }
+    };
 })();
+
+
 

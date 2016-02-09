@@ -2,15 +2,15 @@
 <div class="results" ng-app="CupOfExcellenceApp">
 
     <!-- full banner table wrapper including title -->
-    <section class="bannerTable" ng-controller="GetScoresTestCtrl as getScores">
+    <section class="bannerTable" ng-controller="GetScoresCtrl as vm">
 
         <h2 class="contentHeading"> And The Winner Is... </h2>
 
         <!-- banner table and star wrapper -->
         <div> <img src="../IMG/Star.gif" alt="star" id="star-left"/>
             <table>
-                <tr ng-repeat="(key,value) in getScores.roasterScores | orderBy: '-score'">
-                    <td> {{getScores.rank[$index] | ordinalSuffix}} </td> <td> {{value.name}} </td> <td> Overall Score: {{value.score}} </td>
+                <tr ng-repeat="(key,value) in vm.roasterScores | orderBy: '-score'">
+                    <td> {{vm.rank[$index] | ordinalSuffix}} </td> <td> {{value.name}} </td> <td> Overall Score: {{value.score}} </td>
                 </tr>
             </table> <!-- closes banner table -->
             <img src="../IMG/Star.gif" alt="star" id="star-right"/>
@@ -19,12 +19,12 @@
     </section> <!-- closes the full banner table div including title-->
 
     <!-- full wrapper of tabular results table including toggle buttons -->
-    <section ng-controller="TableResultsHeaderCtrl as tableHeaderCtrl">
+    <section ng-controller="TableResultsHeaderCtrl as vm">
 
         <!-- button wrapper -->
         <div class="button">
-            <button id="individualResult" ng-click="tableHeaderCtrl.setResultsCategory('individual')"> Individual Results </button>
-            <button id="roasterResult" ng-click="tableHeaderCtrl.setResultsCategory('roaster')"> Roaster Results </button>
+            <button id="individualResult" ng-click="vm.setResultsCategory('individual')"> Individual Results </button>
+            <button id="roasterResult" ng-click="vm.setResultsCategory('roaster')"> Roaster Results </button>
         </div> <!-- closes button div -->
 
         <!-- wrapper of tabular results including dropdown menu -->
@@ -32,122 +32,27 @@
 
             <!-- Wrap individual results table -->
             <section class="individual table-results">
-                <h2 class="contentHeading"> {{tableHeaderCtrl.tableHeading | capitalize}} </h2>
+                <h2 class="contentHeading"> {{vm.tableHeading | capitalize}} </h2>
 
 
                 <!-- dropdown menu wrapper for individuals -->
                 <div class="dropdown" >
                     <p> Select Whose Results to See</p>
-                    <select id="individual" ng-model="tableHeaderCtrl.resultsDesired"
-                            ng-options="results for results in tableHeaderCtrl.dropDownArray">
+                    <select id="individual" ng-model="vm.resultsDesired"
+                            ng-options="results for results in vm.dropDownArray"
+                            ng-change="vm.setResultsTable(vm.resultsCategory,vm.resultsDesired)">
                     </select>
                 </div> <!-- closes dropdown menu div -->
 
                 <!-- hard coded individual results table -->
-                <table class="truncate" ng-controller="GetScoresTestCtrl as getScores">
+                <table class="truncate">
                     <tr>
-                        <td> Marie </td> <td> Aroma </td> <td> Aroma Score </td> <td> Acidity </td>
-                        <td> Acidity Score </td> <td> Mouthfeel </td> <td> Mouthfeel Score </td> <td> Flavour </td> <td> Flavour Score </td>
-                        <td> Aftertaste</td> <td> Aftertaste Score</td> <td> Balance </td> <td> Cuppers Score</td> <td> Overall Score </td>
+                        <td> {{vm.resultsDesired}} </td> <td ng-repeat="key in vm.keys | limitTo: -12">{{key | camelCase | tableResultsKey | capitalize}}</td>
                     </tr>
-                    <tr>
-                        <td> Sweet Bloom </td>
-                        <td> cherry, fruity, light</td>
-                        <td> 7 </td>
-                        <td> </td>
-                        <td> 5 </td>
-                        <td> thin </td>
-                        <td> 5 </td>
-                        <td> thin flavour </td>
-                        <td> 6 </td>
-                        <td>  </td>
-                        <td> 7 </td>
-                        <td> too thin </td>
-                        <td> -1 </td>
-                        <td> 79 </td>
-                    </tr>
-                    <tr>
-                        <td> ink! </td>
-                        <td> roasty, bold, chocolate</td>
-                        <td> 9 </td>
-                        <td> mild </td>
-                        <td> 7 </td>
-                        <td>  </td>
-                        <td> 7 </td>
-                        <td> dark, roasty </td>
-                        <td> 8 </td>
-                        <td> nice flavor throughout </td>
-                        <td> 8 </td>
-                        <td> loved it </td>
-                        <td> 3 </td>
-                        <td> 92 </td>
-                    </tr>
-                    <tr>
-                        <td> Middle State </td>
-                        <td> citrus, chocolate</td>
-                        <td> 6 </td>
-                        <td> nice acidity </td>
-                        <td> 8 </td>
-                        <td> a bit thin </td>
-                        <td> 6 </td>
-                        <td> overall good </td>
-                        <td> 7 </td>
-                        <td>  </td>
-                        <td> 7 </td>
-                        <td> good </td>
-                        <td> 1 </td>
-                        <td> 85 </td>
-                    </tr>
-                    <tr>
-                        <td> Huckleberry </td>
-                        <td> mild, carmel, overripe</td>
-                        <td> 6 </td>
-                        <td> </td>
-                        <td> 6 </td>
-                        <td> a bit thin </td>
-                        <td> 6 </td>
-                        <td> too acidic for my liking </td>
-                        <td> 7 </td>
-                        <td> lingering bitter </td>
-                        <td> 6 </td>
-                        <td> bit acidic </td>
-                        <td> 0 </td>
-                        <td> 81 </td>
-                    </tr>
-                    <tr>
-                        <td> Common Wealth </td>
-                        <td> overripe fruit, floral, carmel </td>
-                        <td> 9 </td>
-                        <td> </td>
-                        <td> 7 </td>
-                        <td>  </td>
-                        <td> 6 </td>
-                        <td>  </td>
-                        <td> 7 </td>
-                        <td> bit bitter </td>
-                        <td> 6 </td>
-                        <td> bit bitter </td>
-                        <td> 0 </td>
-                        <td> 85 </td>
-                    </tr>
-                    <tr>
-                        <td> Boxcar </td>
-                        <td> floral, tropical fruit </td>
-                        <td> 7 </td>
-                        <td> </td>
-                        <td> 5 </td>
-                        <td>  </td>
-                        <td> 7 </td>
-                        <td>  </td>
-                        <td> 6 </td>
-                        <td>  </td>
-                        <td> 5 </td>
-                        <td> cold </td>
-                        <td> 0 </td>
-                        <td> 80 </td>
+                    <tr ng-repeat="x in vm.data">
+                        <td ng-repeat="(key,value) in x"> {{value}} </td>
                     </tr>
                 </table> <!-- closes individual table -->
-                {{getScores.scores}}
             </section> <!-- closes individual table section -->
 
         </div> <!-- closes tabular results not including buttons -->
