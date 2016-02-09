@@ -47,9 +47,9 @@
                 <!-- dynamically generated results table -->
                 <table >
                     <tr>
-                        <td> {{vm.resultsDesired}} </td> <td ng-repeat="key in vm.keys | limitTo: -12">{{key | camelCase | tableResultsKey | capitalize}}</td>
+                        <td> {{vm.resultsDesired}} </td> <td ng-repeat="key in vm.keys | limitTo: -13">{{key | camelCase | tableResultsKey | capitalize}}</td>
                     </tr>
-                    <tr ng-repeat="x in vm.data">
+                    <tr ng-repeat="x in vm.data | orderBy:'-score' ">
                         <td ng-repeat="(key,value) in x"> {{value}} </td>
                     </tr>
                 </table> <!-- closes individual table -->

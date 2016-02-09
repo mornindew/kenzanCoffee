@@ -17,3 +17,9 @@ button {
 button:focus{
     outline: none;
 }
+
+/* Remove border when selected */
+button:hover{
+    background-color: #ff9560;
+    border: solid 2px #FF7F00;
+}

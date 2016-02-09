@@ -43,21 +43,16 @@
 
             return $http.get('../data/data.json')
                 .then( function(callback) {
-                    if (resultsDesired) {
+
+                        vm.individualScores = individualScores(callback);
+
                         vm.output = {};
-                        vm.keys = getKeys(callback);
-                        vm.tableData = populateTable(callback, resultsCategory, resultsDesired);
+                        vm.data = populateTable(callback, vm.individualScores, resultsCategory, resultsDesired);
+                        vm.keys = getKeys(vm.data);
                         return output = {
                             keys: vm.keys,
-                            data: vm.tableData
+                            data: vm.data
                         }
-                    }
-                    else {
-                        output = {
-                            keys: getKeys(callback)
-                        };
-                        return output;
-                    }
                 })
                 .catch( function() {
                     console.log('Error loading data.json from server')
@@ -260,41 +255,62 @@
     }
 
     //**********************************************************************************************************************************//
-    function populateTable(response, resultsCategory, resultsDesired) {
+    function populateTable(response, individualScores, resultsCategory, resultsDesired) {
         myData = response.data;
 
         //initialize results array
         var results = [];
-        var keys = getKeys(response);
 
-        //for each object
-        for (var i = 0; i < myData.length; i++) {
-            //if desired result is a person
-            if (resultsCategory =='individual' && resultsDesired == myData[i].name) {
-                myObject = myData[i];
+        //Get data for each object
+            for (var i = 0; i < myData.length; i++) {
+                //if desired result is a person
+                if (resultsCategory =='individual' && resultsDesired == myData[i].name) {
+                    myObject = myData[i];
 
-                delete myObject['name'];
+                    //add individual score to the results objects
+                    for (var j = 0; j<individualScores.length; j++) {
+                        if(resultsDesired == individualScores[j].name &&
+                            myObject.roaster == individualScores[j].roaster) {
 
-                //push all objects with data from that person to results array
-                results.push(myObject);
+                            myObject["score"] = individualScores[j].score;
+                        }
+                    }
+
+                    //delete name for individual results category since we will not need to display it
+                    delete myObject['name'];
+
+                    //push all objects with data from that person to results array
+                    results.push(myObject);
+                }
+                else if (resultsCategory =='roaster' && resultsDesired == myData[i].roaster) {
+                    myObject = myData[i];
+
+                    //add individual score to the results objects
+                    for (j = 0; j<individualScores.length; j++) {
+                        if(resultsDesired == individualScores[j].roaster &&
+                            myObject.name == individualScores[j].name) {
+
+                            myObject["score"] = individualScores[j].score;
+                        }
+                    }
+
+                    delete myObject['roaster'];
+
+                    //push all objects with data from that roaster to results array
+                    results.push(myObject);
+
+                }
+
             }
-            else if (resultsCategory =='roaster' && resultsDesired == myData[i].roaster) {
-                myObject = myData[i];
 
-                delete myObject['roaster'];
+        //Get keys to display data with
 
-                //push all objects with data from that person to results array
-                results.push(myObject);
-
-            }
-
-        }
         return results
     }
 
     //**********************************************************************************************************************************//
     function getKeys(response) {
-        myData = response.data;
+        myData = response;
 
         //initialize keys array
         var myKeys = [];
