@@ -8,7 +8,7 @@
         //set category, null out results desired, and generate dropdown menu
         vm.setResultsCategory = function (value) {
             vm.resultsCategory = value;
-            vm.resultsDesired = null;
+            vm.resultsDesired = "Choose Which Results to Display Above";
             var promise = dropDownData.getData(value);
             promise.then(
                 function (callback) {
@@ -17,6 +17,9 @@
                 console.log(error)
             });
             vm.tableHeading = value + ' Results';
+
+            vm.keys = [];
+            vm.data = [];
         };
 
         vm.setResultsCategory('individual');
@@ -30,19 +33,18 @@
 
         promise.then( function(callback) {
             if (callback.keys) {
-                    vm.keys = callback.keys;
+                vm.keys = callback.keys;
             }
             if (callback.data) {
                 vm.data = callback.data;
             }
+
         });
         promise.catch( function() {
             console.log('Error with loading the results table')
         })
         };
 
-        //Set initial conditions for results table
-        vm.setResultsTable(vm.resultsCategory,vm.resultsDesired)
 
     }]);
 })();

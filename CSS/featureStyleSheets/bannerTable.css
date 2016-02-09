@@ -31,6 +31,7 @@
     display: inline-block;
     margin: auto;
     border: none;
+    width: 100%;
 }
 
 /* Format border and color*/

@@ -1,9 +1,9 @@
 //this service will be used to generate each roasters average score for the banner table
 
 (function() {
-    var app = angular.module('calcScoreService', []);
+    var app = angular.module('calcScoreService', ['utilitiesService']);
 
-    app.service('calcScore', ['$http', function ($http) {
+    app.service('calcScore', ['$http','utilities', function ($http, utilities) {
         var vm = this;
 
         vm.getIndividualScores = function () {
@@ -41,25 +41,18 @@
 
         vm.resultsTable = function(resultsCategory, resultsDesired) {
 
-
-
             return $http.get('../data/data.json')
                 .then( function(callback) {
-                    if (resultsDesired) {
+
+                        vm.individualScores = individualScores(callback);
+
                         vm.output = {};
-                        vm.keys = getKeys(callback);
-                        vm.tableData = populateTable(callback, resultsCategory, resultsDesired);
+                        vm.data = populateTable(callback, vm.individualScores, resultsCategory, resultsDesired);
+                        vm.keys = getKeys(vm.data);
                         return output = {
                             keys: vm.keys,
-                            data: vm.tableData
+                            data: vm.data
                         }
-                    }
-                    else {
-                        output = {
-                            keys: getKeys(callback)
-                        };
-                        return output;
-                    }
                 })
                 .catch( function() {
                     console.log('Error loading data.json from server')
@@ -99,7 +92,65 @@
 
         // return average value rounded to the tenth //
         return avg = Math.round(10 * (sum / length)) / 10;
+    }
+//**********************************************************************************************************************************//
+    //calculate individual scores//
+    function individualScores(response) {
+        var myData = response.data;
 
+        //initialize array for scores //
+        var indivScores = [];
+
+        //iterate through people //
+        for (var i = 0; i < myData.length; i++) {
+
+            //validate data to ensure that individual object contains desired information //
+            //ensure that property contains numeric answer
+            if (validateData(myData[i], 'individualScores')) {
+
+                //define individuals array as variable
+                var individual = myData[i];
+
+                //define name of individual using JSON parser
+                var name = individual['name'];
+                var roaster = individual['roaster'];
+
+                //initialize score variable
+                var score = 0;
+
+                //define score properties to iterate through
+                var desiredProps = ["aroma","acidity", "mouthFeel", "flavour", "aftertaste","cupperScore"];
+
+                //iterate through desired properties using JSON parser and add to overall score
+                for (var j = 0; j < desiredProps.length; j++) {
+                    var prop = desiredProps[j];
+
+                    //ensure property being added is a number
+                    if (checkNumber(individual[prop])) {
+                        score += individual[prop];
+                    }
+                }
+
+                //only add 50 to score if score > 0. Prevents unscored coffee from displaying as score = 50
+                if (score > 0) {
+                    indivScores.push({
+                        name: name,
+                        roaster: roaster,
+                        score: score + 50
+                    });
+                }
+                //defining score as null prevents it from affecting roaster score average.
+                else {
+                    indivScores.push({
+                        name: name,
+                        roaster: roaster,
+                        score: null
+                    });
+                }
+            }
+        }
+
+        return indivScores;
     }
 
 //**********************************************************************************************************************************//
@@ -158,8 +209,7 @@
 
         if (functionName == 'individualScores') {
             //define expected keys as array//
-            expectedKeys = ["firstName",
-                "lastName",
+            expectedKeys = ["name",
                 "roaster",
                 "aromaCom",
                 "aroma",
@@ -212,94 +262,63 @@
 
     }
 
-//**********************************************************************************************************************************//
-    //calculate individual scores//
-    function individualScores(response) {
-        var myData = response.data;
-
-                //initialize array for scores //
-                var indivScores = [];
-
-                //iterate through people //
-                for (var i = 0; i < myData.length; i++) {
-
-                    //validate data to ensure that individual object contains desired information //
-                    //ensure that property contains numeric answer
-                    if (validateData(myData[i], 'individualScores')) {
-
-                            //define individuals array as variable
-                            var individual = myData[i];
-
-                            //define name of individual using JSON parser
-                            var name = individual['firstName'] + " " +individual['lastName'];
-                            var roaster = individual['roaster'];
-
-                            //initialize score variable
-                            var score = 0;
-
-                            //define score properties to iterate through
-                            var desiredProps = ["aroma","acidity", "mouthFeel", "flavour", "aftertaste","cupperScore"];
-
-                            //iterate through desired properties using JSON parser and add to overall score
-                            for (var j = 0; j < desiredProps.length; j++) {
-                                var prop = desiredProps[j];
-
-                                //ensure property being added is a number
-                                if (checkNumber(individual[prop])) {
-                                score += individual[prop];
-                                }
-                            }
-
-                            indivScores.push({
-                                name: name,
-                                roaster: roaster,
-                                score: score + 50
-                            });
-
-                    }
-                }
-
-        return indivScores;
-    }
-
     //**********************************************************************************************************************************//
-    function populateTable(response, resultsCategory, resultsDesired) {
+    function populateTable(response, individualScores, resultsCategory, resultsDesired) {
         myData = response.data;
 
         //initialize results array
         var results = [];
-        var keys = getKeys(response);
 
-        //for each object
-        for (var i = 0; i < myData.length; i++) {
-            //if desired result is a person
-            if (resultsCategory =='individual' && resultsDesired == myData[i].firstName) {
-                myObject = myData[i];
+        //Get data for each object
+            for (var i = 0; i < myData.length; i++) {
+                //if desired result is a person
+                if (resultsCategory =='individual' && resultsDesired == myData[i].name) {
+                    myObject = myData[i];
 
-                delete myObject['firstName'];
-                delete myObject['lastName'];
+                    //add individual score to the results objects
+                    for (var j = 0; j<individualScores.length; j++) {
+                        if(resultsDesired == individualScores[j].name &&
+                            myObject.roaster == individualScores[j].roaster) {
 
-                //push all objects with data from that person to results array
-                results.push(myObject);
+                            myObject["score"] = individualScores[j].score;
+                        }
+                    }
+
+                    //delete name for individual results category since we will not need to display it
+                    delete myObject['name'];
+
+                    //push all objects with data from that person to results array
+                    results.push(myObject);
+                }
+                else if (resultsCategory =='roaster' && resultsDesired == myData[i].roaster) {
+                    myObject = myData[i];
+
+                    //add individual score to the results objects
+                    for (j = 0; j<individualScores.length; j++) {
+                        if(resultsDesired == individualScores[j].roaster &&
+                            myObject.name == individualScores[j].name) {
+
+                            myObject["score"] = individualScores[j].score;
+                        }
+                    }
+
+                    delete myObject['roaster'];
+
+                    //push all objects with data from that roaster to results array
+                    results.push(myObject);
+
+                }
+
             }
-            else if (resultsCategory =='roaster' && resultsDesired == myData[i].roaster) {
-                myObject = myData[i];
 
-                delete myObject ['lastName'];
-                delete myObject['roaster'];
+        //Get keys to display data with
 
-                //push all objects with data from that person to results array
-                results.push(myObject);
-
-            }
-
-        }
         return results
     }
 
     //**********************************************************************************************************************************//
     function getKeys(response) {
-        myData = response.data;
+        myData = response;
 
         //initialize keys array
         var myKeys = [];
@@ -308,7 +327,7 @@
         for (var i = 0; i < myData.length; i++) {
             var myObject = myData[i];
             for (var key in myObject) {
-                if (key !== 'firstName' && key !== "lastName") {
+                if (key !== 'name') {
                 myKeys.pushIfUnique(key);
                 }
             }

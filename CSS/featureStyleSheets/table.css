@@ -2,36 +2,52 @@
 /* Currently being used for the individual and roaster results table */
 
 /* Styles basic table properties*/
-table {
+.tabularResults table {
     text-align: center;
-    display: inline-block;
     border: 1px solid #999;
-    margin: 10px 2% 10px 2%;
+    margin: 2% auto;
     border-collapse: collapse;
-    white-space: nowrap;
+    table-layout: fixed;
+    width: 80%;
 }
+
+/* Styles all data cells*/
+.tabularResults tr td {
+    /*overflow: hidden;*/
+    /*text-overflow: ellipsis;*/
+    /*white-space: nowrap;*/
+    padding: 2px;
+}
+
+/* Styles all data cells*/
+/*.tabularResults tr td:hover {*/
+    /*text-overflow: clip;*/
+    /*white-space: normal;*/
+/*}*/
 
 /* Styles table name in top left cell*/
-tr:first-child td:first-child {
+.tabularResults tr:first-child td:first-child {
     font-size: 1.25em;
     font-weight: 800;
-}
-
-/* Styles top row*/
-table tr:nth-child(1){
-    background-color: #477186;
-    color: white;
-    border: 1px solid #888;
     white-space: normal;
 }
 
+/* Styles top row*/
+.tabularResults tr:nth-child(1) td{
+    white-space: normal;
+    background-color: #477186;
+    color: white;
+}
+
 /* Styles first column*/
-tr td:first-child {
+.tabularResults tr td:first-child {
+    width: 15%;
+    white-space: normal;
     font-weight: bolder;
 }
 
 /* Styles alternating row colors*/
-table tr:nth-child(even){
+.tabularResults table tr:nth-child(even){
     background-color: #dddddd;
     border: 1px solid #999;
 }
