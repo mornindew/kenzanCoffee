@@ -13,17 +13,17 @@
 
 /* Styles all data cells*/
 .tabularResults tr td {
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
+    /*overflow: hidden;*/
+    /*text-overflow: ellipsis;*/
+    /*white-space: nowrap;*/
     padding: 2px;
 }
 
 /* Styles all data cells*/
-.tabularResults tr td:hover {
-    text-overflow: clip;
-    white-space: normal;
-}
+/*.tabularResults tr td:hover {*/
+    /*text-overflow: clip;*/
+    /*white-space: normal;*/
+/*}*/
 
 /* Styles table name in top left cell*/
 .tabularResults tr:first-child td:first-child {
