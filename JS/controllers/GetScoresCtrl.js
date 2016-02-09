@@ -1,7 +1,7 @@
 (function () {
-    var app = angular.module('GetScoresTestCtrl', ['calcScoreService', 'dropDownDataService', 'ordinalSuffixFilter']);
+    var app = angular.module('GetScoresCtrl', ['calcScoreService', 'dropDownDataService', 'ordinalSuffixFilter']);
 
-    app.controller('GetScoresTestCtrl',['calcScore','dropDownData', function (calcScore, dropDownData) {
+    app.controller('GetScoresCtrl',['calcScore','dropDownData', function (calcScore, dropDownData) {
 
         var vm = this;
 
