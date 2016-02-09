@@ -5,12 +5,7 @@
         return {
             /* Define function to check if entry is a number */
             checkNumber: function(x) {
-                if (typeof(x) == "number") {
-                    return true
-                }
-                else {
-                    return false
-                }
+                return(typeof(x) == "number");
             },
 
             /* average function */
