@@ -48,7 +48,7 @@
 
                         vm.output = {};
                         vm.data = populateTable(callback, vm.individualScores, resultsCategory, resultsDesired);
-                        vm.keys = getKeys(vm.data);
+                        vm.keys = utilities.getKeys(vm.data);
                         return output = {
                             keys: vm.keys,
                             data: vm.data
@@ -60,40 +60,12 @@
 
 
 
-        }
-
-    }]);
+        };
 
     /*******************************************************
      FUNCTIONS
      ******************************************************/
 
-    /* Define function to check if entry is a number */
-    function checkNumber(x) {
-        if (typeof(x) == "number") {
-            return true
-        }
-        else {
-            return false
-        }
-    }
-
-//**********************************************************************************************************************************//
-    /* average function */
-    function average(list) {
-        //genreate number of item in array
-        var length = list.length;
-
-        var sum = 0;
-        //generate sum of array //
-        for (var i = 0; i < length; i++) {
-            sum += list[i];
-        }
-
-        // return average value rounded to the tenth //
-        return avg = Math.round(10 * (sum / length)) / 10;
-    }
-//**********************************************************************************************************************************//
     //calculate individual scores//
     function individualScores(response) {
         var myData = response.data;
@@ -126,7 +98,7 @@
                     var prop = desiredProps[j];
 
                     //ensure property being added is a number
-                    if (checkNumber(individual[prop])) {
+                    if (utilities.checkNumber(individual[prop])) {
                         score += individual[prop];
                     }
                 }
@@ -171,7 +143,7 @@
                 //make sure that property contains a number, if not do not push to output array (would mess up average function otherwise)
                 if (myData[j].roaster == roasterNames[i]
                     && validateData(myData[j],'roasterScores')
-                    && checkNumber(myData[j].score)) {
+                    && utilities.checkNumber(myData[j].score)) {
                     //populate output array with results!
                     var score = myData[j].score;
                     output.push(score);
@@ -179,7 +151,7 @@
             }
 
             //average all results to get overall score
-            var avg = average(output);
+            var avg = utilities.average(output);
 
             //push roaster name and overall score to a results array
             roasterScores.push({
@@ -315,41 +287,7 @@
 
         return results
     }
-
-    //**********************************************************************************************************************************//
-    function getKeys(response) {
-        myData = response;
-
-        //initialize keys array
-        var myKeys = [];
-
-        //for each object
-        for (var i = 0; i < myData.length; i++) {
-            var myObject = myData[i];
-            for (var key in myObject) {
-                if (key !== 'name') {
-                myKeys.pushIfUnique(key);
-                }
-            }
-        }
-
-        return myKeys
-    }
-
-    Array.prototype.inArray = function(value) {
-        for (var i = 0; i <this.length; i++) {
-            if (value == this[i]) {
-                return false
-            }
-        }
-        return true
-    };
-
-    Array.prototype.pushIfUnique = function(value) {
-      if (this.inArray(value)) {
-          this.push(value);
-      }
-    };
+    }]);
 })();
 
 
