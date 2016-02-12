@@ -1017,5 +1017,22 @@
       "aftertaste": 4,
       "balance": null,
       "cupperScore": 0
-    }
+    },
+
+  {
+    "name": "Govinda Tamburino",
+    "roaster": "Folgers Instant Coffee",
+    "aromaCom": "YUM",
+    "aroma": 8,
+    "acidityCom": "perfectly sour!",
+    "acidity": 8,
+    "mouthFeelCom": "has some nice texture from the grains",
+    "mouthFeel": 7,
+    "flavourCom": "burnt and roasty, soo good",
+    "flavour": 9,
+    "aftertasteCom": "lingers delicious folgers",
+    "aftertaste": 8,
+    "balance": "delicately balanced, must be expensive",
+    "cupperScore": 4
+  }
   ]
