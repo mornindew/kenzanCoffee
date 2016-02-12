@@ -9,7 +9,7 @@
         <!-- banner table and star wrapper -->
         <div> <img src="../IMG/Star.gif" alt="star" id="star-left"/>
             <table>
-                <tr ng-repeat="(key,value) in vm.roasterScores | orderBy: '-score'">
+                <tr ng-repeat="value in vm.roasterScores | orderBy: '-score'">
                     <td> {{vm.rank[$index] | ordinalSuffix}} </td> <td> {{value.name}} </td> <td> Overall Score: {{value.score}} </td>
                 </tr>
             </table> <!-- closes banner table -->
