@@ -1,16 +1,18 @@
-//this service will be used to generate each roasters average score for the banner table
 
 (function() {
-    var app = angular.module('calcScoreService', ['utilitiesService']);
+    var app = angular.module('resultsService', ['utilitiesService', 'individualScoresService']);
 
-    app.service('calcScore', ['$http','utilities', function ($http, utilities) {
+    app.service('results', ['$http','utilities','individualScores', function ($http, utilities, individualScores) {
         var vm = this;
 
         vm.getIndividualScores = function () {
 
             return $http.get('../data/data.json')
                 .then(individualScores)
-                .catch(getDataFailed);
+                .catch(function() {
+                    console.log('There was an error with returning data when calculating individual score');
+                    return 'Error with data load for individual scores';
+                });
 
         };
 
@@ -22,18 +24,20 @@
                     return $http.get('../data/data.json')
                         .then(function (response) {
                             vm.individualScores = individualScores(response);
-
+                            console.log(vm.individualScores);
                             vm.roasterScores = roasterScores(vm.individualScores, vm.roasterNames);
 
                             return vm.roasterScores
 
                         })
                         .catch( function() {
-                            console.log('Error loading data.json from server')
+                            console.log('There was an error with returning data when calculating roaster scores')
+                            return 'Error with data load for roaster scores';
                         });
                 })
                 .catch ( function() {
-                    console.log('Error returning roaster names key');
+                    console.log('There was an error with returning roaster names data when calculating roaster scores')
+                    return 'Error with data load for roaster names';
                 })
 
 
@@ -55,7 +59,8 @@
                         }
                 })
                 .catch( function() {
-                    console.log('Error loading data.json from server')
+                    console.log('There was an error with returning data when populating results table');
+                    return 'Error with data load for results table';
                 });
 
 
@@ -66,64 +71,64 @@
      FUNCTIONS
      ******************************************************/
 
-    //calculate individual scores//
-    function individualScores(response) {
-        var myData = response.data;
+    // //calculate individual scores//
+    // function individualScores(response) {
+    //     var myData = response.data;
 
-        //initialize array for scores //
-        var indivScores = [];
+    //     //initialize array for scores //
+    //     var indivScores = [];
 
-        //iterate through people //
-        for (var i = 0; i < myData.length; i++) {
+    //     //iterate through people //
+    //     for (var i = 0; i < myData.length; i++) {
 
-            //validate data to ensure that individual object contains desired information //
-            //ensure that property contains numeric answer
-            if (validateData(myData[i], 'individualScores')) {
+    //         //validate data to ensure that individual object contains desired information //
+    //         //ensure that property contains numeric answer
+    //         if (validateData(myData[i], 'individualScores')) {
 
-                //define individuals array as variable
-                var individual = myData[i];
+    //             //define individuals array as variable
+    //             var individual = myData[i];
 
-                //define name of individual using JSON parser
-                var name = individual['name'];
-                var roaster = individual['roaster'];
+    //             //define name of individual using JSON parser
+    //             var name = individual['name'];
+    //             var roaster = individual['roaster'];
 
-                //initialize score variable
-                var score = 0;
+    //             //initialize score variable
+    //             var score = 0;
 
-                //define score properties to iterate through
-                var desiredProps = ["aroma","acidity", "mouthFeel", "flavour", "aftertaste","cupperScore"];
+    //             //define score properties to iterate through
+    //             var desiredProps = ["aroma","acidity", "mouthFeel", "flavour", "aftertaste","cupperScore"];
 
-                //iterate through desired properties using JSON parser and add to overall score
-                for (var j = 0; j < desiredProps.length; j++) {
-                    var prop = desiredProps[j];
+    //             //iterate through desired properties using JSON parser and add to overall score
+    //             for (var j = 0; j < desiredProps.length; j++) {
+    //                 var prop = desiredProps[j];
 
-                    //ensure property being added is a number
-                    if (utilities.checkNumber(individual[prop])) {
-                        score += individual[prop];
-                    }
-                }
+    //                 //ensure property being added is a number
+    //                 if (utilities.checkNumber(individual[prop])) {
+    //                     score += individual[prop];
+    //                 }
+    //             }
 
-                //only add 50 to score if score > 0. Prevents unscored coffee from displaying as score = 50
-                if (score > 0) {
-                    indivScores.push({
-                        name: name,
-                        roaster: roaster,
-                        score: score + 50
-                    });
-                }
-                //defining score as null prevents it from affecting roaster score average.
-                else {
-                    indivScores.push({
-                        name: name,
-                        roaster: roaster,
-                        score: null
-                    });
-                }
-            }
-        }
+    //             //only add 50 to score if score > 0. Prevents unscored coffee from displaying as score = 50
+    //             if (score > 0) {
+    //                 indivScores.push({
+    //                     name: name,
+    //                     roaster: roaster,
+    //                     score: score + 50
+    //                 });
+    //             }
+    //             //defining score as null prevents it from affecting roaster score average.
+    //             else {
+    //                 indivScores.push({
+    //                     name: name,
+    //                     roaster: roaster,
+    //                     score: null
+    //                 });
+    //             }
+    //         }
+    //     }
 
-        return indivScores;
-    }
+    //     return indivScores;
+    // }
 
 //**********************************************************************************************************************************//
     /* pull scores of desired roaster */

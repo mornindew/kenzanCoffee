@@ -1,7 +1,7 @@
 (function () {
-    var app = angular.module('TableResultsHeader', ['dropDownDataService', 'capitalizeFilter', 'calcScoreService', 'tableResultsKeyFilter', 'camelCaseFilter']);
+    var app = angular.module('TabularResultsCtrl', ['dropDownDataService', 'capitalizeFilter', 'resultsService', 'tableResultsKeyFilter', 'camelCaseFilter']);
 
-    app.controller('TableResultsHeaderCtrl',['dropDownData', 'calcScore', function (dropDownData, calcScore) {
+    app.controller('TabularResultsCtrl',['dropDownData', 'results', function (dropDownData, calcScore) {
 
         var vm = this;
 

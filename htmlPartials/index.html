@@ -12,13 +12,13 @@
 <header>
     <h4 class="subHeader"> Kenzan Media </h4>
     <h1 class="mainHeader"> Cup of Excellence </h1>
-    <div class = "nav">
+    <nav class = "nav">
         <ul>
-            <li> <a href="#/"> Home </a> </li>
-            <li> <a href="#results"> Results </a> </li>
-            <li> <a href="#map"> Find the Coffee </a></li>
+            <li> <a href="#/" id="homePage"> Home </a> </li>
+            <li> <a href="#results" id="resultsPage"> Results </a> </li>
+            <li> <a href="#map" id="mapPage"> Find the Coffee </a></li>
         </ul>
-    </div>
+    </nav>
 </header>
 
 <section>
@@ -45,15 +45,19 @@
 <!-- Single Page Router -->
 <script type="text/javascript" src="../JS/CupOfExcellenceApp.js"></script>
 <!-- Tabular Results -->
-<script type="text/javascript" src="../JS/controllers/TableResultsHeaderCtrl.js"></script>
+<script type="text/javascript" src="../JS/controllers/TabularResultsCtrl.js"></script>
 <script type="text/javascript" src="../JS/services/dropDownDataService.js"></script>
 <script type="text/javascript" src="../JS/services/utilitiesService.js"></script>
+<script type="text/javascript" src="../JS/services/individualScoreService.js"></script>
+<script type="text/javascript" src="../JS/services/validateDataService.js"></script>
+<script type="text/javascript" src="../JS/services/roasterScoreService.js"></script>
+<script type="text/javascript" src="../JS/services/populateTableService.js"></script>
 <script type="text/javascript" src="../JS/filters/capitalizeFilter.js"></script>
 <script type="text/javascript" src="../JS/filters/resultsTableKeyFilter.js"></script>
 <script type="text/javascript" src="../JS/filters/camelCaseFilter.js"></script>
 <!-- Get Scores -->
-<script type="text/javascript" src="../JS/services/calcScoreService.js"></script>
-<script type="text/javascript" src="../JS/controllers/GetScoresCtrl.js"></script>
+<script type="text/javascript" src="../JS/services/resultsService.js"></script>
+<script type="text/javascript" src="../JS/controllers/bannerTableCtrl.js"></script>
 <script type="text/javascript" src="../JS/filters/ordinalSuffixFilter.js"></script>
 
 

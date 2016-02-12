@@ -15,7 +15,7 @@ var utilities = {};
 		expect(utilities.checkNumber(4)).toEqual(true);
 		expect(utilities.checkNumber(null)).toEqual(false);
 		expect(utilities.checkNumber("hi")).toEqual(false);
-		expect(utilities.checkNumber(true)).toEqual(false);
+		expect(utilities.checkNumber([true,3])).toEqual(false);
 
 	})
 

@@ -2,7 +2,7 @@
 <div class="results" ng-app="CupOfExcellenceApp">
 
     <!-- full banner table wrapper including title -->
-    <section class="bannerTable" ng-controller="GetScoresCtrl as vm">
+    <section class="bannerTable" ng-controller="bannerTableCtrl as vm">
 
         <h2 class="contentHeading"> And The Winner Is... </h2>
 
@@ -19,7 +19,7 @@
     </section> <!-- closes the full banner table div including title-->
 
     <!-- full wrapper of tabular results table including toggle buttons -->
-    <section ng-controller="TableResultsHeaderCtrl as vm">
+    <section ng-controller="TabularResultsCtrl as vm">
 
         <!-- button wrapper -->
         <div class="button">
@@ -32,7 +32,7 @@
 
             <!-- Wrap individual results table -->
             <section class="individual table-results">
-                <h2 class="contentHeading tooltips" tooltip="display me"> {{vm.tableHeading | capitalize}} </h2>
+                <h2 class="contentHeading"> {{vm.tableHeading | capitalize}} </h2>
 
 
                 <!-- dropdown menu wrapper for individuals -->
