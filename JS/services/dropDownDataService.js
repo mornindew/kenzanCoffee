@@ -9,8 +9,9 @@ app.service('dropDownData', ['$http', function ($http) {
                 .success( function(callback) {
                     return callback.data
                 })
-                .error ( function(error) {
-                    console.log('error returning data: ' + error);
+                .error ( function() {
+                    console.log('There was an error returing the dropdown data.');
+                    return 'Error with dropdown data load'
                 })
         };
 
